@@ -145,10 +145,15 @@ textarea{width:100%;min-height:110px;font-family:ui-monospace,SFMono-Regular,Men
  border-radius:8px;padding:10px;resize:vertical}
 .ioBox{padding:16px;display:none}
 .ioBox.open{display:block}
-.warnBar{display:flex;gap:9px;align-items:flex-start;padding:11px 14px;margin-bottom:16px;
- border:1px solid var(--ring);border-left:3px solid var(--warning);border-radius:8px;
- background:var(--surface-1);font-size:12.5px;color:var(--ink-2)}
-.warnBar b{color:var(--ink)}
+.warnBar,.okBar{display:flex;gap:9px;align-items:flex-start;padding:11px 14px;margin-bottom:16px;
+ border:1px solid var(--ring);border-radius:8px;background:var(--surface-1);font-size:12.5px;color:var(--ink-2)}
+.warnBar{border-left:3px solid var(--warning)}
+.okBar{border-left:3px solid var(--good)}
+.warnBar b,.okBar b{color:var(--ink)}
+.okBar>span{color:var(--good);font-weight:700}
+.saveDot{font-size:11.5px;color:var(--muted);opacity:0;transition:opacity .25s;
+ font-variant-numeric:tabular-nums;align-self:center;white-space:nowrap}
+.saveDot.on{opacity:1}
 footer{margin-top:34px;color:var(--muted);font-size:11.5px;text-align:center}
 @media (max-width:760px){
  .hero{grid-template-columns:1fr}
@@ -178,20 +183,20 @@ footer{margin-top:34px;color:var(--muted);font-size:11.5px;text-align:center}
   <button class="btn" id="btnTable">Table view</button>
   <button class="btn" id="btnExport">Export</button>
   <button class="btn" id="btnImport">Import</button>
+  <span id="saveDot" class="saveDot"></span>
   <button class="btn" id="theme">Light / dark</button>
  </div>
 </header>
 
-<div class="warnBar"><span>&#9888;</span><div><b>Progress lives in this tab only.</b>
- Artifacts can't use browser storage, so ticking a box is not saved when you close or reload.
- Hit <b>Export</b> to copy a JSON snapshot, and <b>Import</b> to paste it back next time. Day-by-day lesson links are relative — they open when this tracker is opened from your <code>ai-era-backend</code> folder.</div></div>
+<div id="storeBar" class="okBar"></div>
 
 <div class="card ioBox" id="io">
  <h2 style="margin-top:0">Progress snapshot</h2>
  <p class="note">Export writes your current state here &mdash; copy it somewhere safe (e.g. <code>logs/progress.json</code> in your upskills folder). To restore, paste a snapshot in and press Restore.</p>
  <textarea id="ioTxt" spellcheck="false" placeholder="Paste a previously exported snapshot here, then press Restore."></textarea>
  <div class="row" style="margin-top:10px"><button class="btn" id="ioDo">Restore from JSON</button>
- <button class="btn" id="ioClose">Close</button></div>
+ <button class="btn" id="ioClose">Close</button>
+ <button class="btn" id="btnClear" style="margin-left:auto">Clear saved progress</button></div>
 </div>
 
 <div class="hero">
@@ -262,7 +267,41 @@ const TOTW = SUBS.reduce((a,s)=>a+s.weeks,0);
 const TOTH = SUBS.reduce((a,s)=>a+s.hours,0);
 const TOTX = SUBS.reduce((a,s)=>a+s.exitChecklist.length,0);
 
-// ---- state (in-memory only; no browser storage is available in artifacts) ----
+// ---- persistence: localStorage, with a safe in-memory fallback ----
+const LSKEY = 'ai-era-backend-roadmap:v1';
+let storageOK = null;
+function probeStorage(){
+  try { const t='__probe__'+Math.random(); localStorage.setItem(t,'1'); localStorage.removeItem(t); return true; }
+  catch(e){ return false; }
+}
+function lsLoad(){
+  try { const raw=localStorage.getItem(LSKEY); if(!raw) return null;
+        const o=JSON.parse(raw); return o&&o.state?o.state:null; } catch(e){ return null; }
+}
+function lsSave(state){
+  try { localStorage.setItem(LSKEY, JSON.stringify({v:1,savedAt:new Date().toISOString(),state})); return true; }
+  catch(e){ return false; }
+}
+function lsClear(){ try { localStorage.removeItem(LSKEY); return true; } catch(e){ return false; } }
+
+let saveTimer=null, booted=false, suppressSave=false;
+function persist(){
+  if(!booted || storageOK===false || suppressSave) return;
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(()=>{
+    if(!lsSave(S)){ storageOK=false; renderStorageBar(); } else flashSaved();
+  },250);
+}
+function flashSaved(){
+  const el=$('#saveDot'); if(!el) return;
+  const t=new Date();
+  el.textContent='Saved '+String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+  el.classList.add('on');
+  clearTimeout(flashSaved._t);
+  flashSaved._t=setTimeout(()=>el.classList.remove('on'),1600);
+}
+
+// ---- state ----
 let S = { weeks:{}, exits:{}, scores:{}, startDate:"" };
 const wk=(id,n)=>id+"#"+n, ex=(id,i)=>id+"!"+i;
 
@@ -443,7 +482,7 @@ function buildEntry(){
     const m=+$('#scMonth').value;
     const arr=AREAS.map((_,i)=>{ const v=+$('.sInp[data-a="'+i+'"]').value; return (v>=1&&v<=5)?v:0; });
     if(arr.every(v=>!v)){ alert('Enter at least one score between 1 and 5.'); return; }
-    S.scores[m]=arr; renderScores();
+    S.scores[m]=arr; renderScores(); persist();
   };
   $('#scMonth').onchange=()=>{
     const cur=S.scores[+$('#scMonth').value];
@@ -499,12 +538,27 @@ function doImport(){
     const o=JSON.parse($('#ioTxt').value);
     const st=o.state||o;
     S={weeks:st.weeks||{},exits:st.exits||{},scores:st.scores||{},startDate:st.startDate||''};
-    $('#start').value=S.startDate; syncAll(); renderScores();
-    alert('Progress restored.');
+    $('#start').value=S.startDate; syncAll(); renderScores(); persist();
+    alert('Progress restored'+(storageOK?' and saved to this browser.':'.'));
   }catch(err){ alert('Could not parse that JSON: '+err.message); }
 }
 
-function syncAll(){ renderStats(); renderTimeline(); syncCards(); renderTable(); }
+function renderStorageBar(){
+  const el=$('#storeBar'); if(!el) return;
+  if(storageOK){
+    el.className='okBar';
+    el.innerHTML='<span>\u2713</span><div><b>Progress saves automatically in this browser.</b> '+
+      'Start date, ticked blocks, checklist items and monthly scores are restored when you reopen this page. '+
+      'Use <b>Export</b> to back them up or move them to another browser or device \u2014 saved data is per-browser and per-site. '+
+      'Day-by-day lesson links are relative, so open this tracker from its folder or its published URL.</div>';
+  } else {
+    el.className='warnBar';
+    el.innerHTML='<span>\u26a0</span><div><b>This browser is blocking local storage,</b> so progress lives in this tab only '+
+      'and is lost on reload (private windows and some privacy settings do this). '+
+      'Hit <b>Export</b> to copy a JSON snapshot and <b>Import</b> to paste it back next time.</div>';
+  }
+}
+function syncAll(){ renderStats(); renderTimeline(); syncCards(); renderTable(); persist(); }
 
 // ---------------- init ----------------
 buildCards(); buildEntry();
@@ -512,8 +566,17 @@ $('#tlAxisR').textContent='week 62.4 · month 14.4 · '+TOTH.toLocaleString()+'h
 $('#legend').innerHTML=Object.entries(PHN).map(([k,v])=>
   '<span><i style="background:var(--p'+k+')"></i>P'+k+' '+esc(v)+'</span>').join('');
 $('#q').oninput=applyFilters; $('#fPhase').onchange=applyFilters; $('#fState').onchange=applyFilters;
-$('#start').onchange=e=>{ S.startDate=e.target.value; renderStats(); };
+$('#start').onchange=e=>{ S.startDate=e.target.value; renderStats(); persist(); };
 $('#btnExport').onclick=doExport;
+$('#btnClear').onclick=()=>{
+  if(!confirm('Delete saved progress from this browser?\n\nThis cannot be undone \u2014 Export a snapshot first if you want a backup.')) return;
+  suppressSave = true;
+  S={weeks:{},exits:{},scores:{},startDate:''};
+  $('#start').value=''; syncAll(); renderScores();
+  clearTimeout(saveTimer); lsClear();
+  suppressSave = false;
+  alert('Saved progress cleared.');
+};
 $('#btnImport').onclick=()=>{ $('#io').classList.add('open'); $('#ioTxt').focus(); };
 $('#ioDo').onclick=doImport;
 $('#ioClose').onclick=()=>$('#io').classList.remove('open');
@@ -524,6 +587,16 @@ $('#btnAll').onclick=()=>{ const any=$$('.sr').some(c=>!c.classList.contains('op
 $('#theme').onclick=()=>{ const r=document.documentElement;
   const dark=getComputedStyle(r).getPropertyValue('--plane').trim()==='#0d0d0d';
   r.dataset.theme=dark?'light':'dark'; };
+storageOK = probeStorage();
+if(storageOK){
+  const saved = lsLoad();
+  if(saved){
+    S = { weeks:saved.weeks||{}, exits:saved.exits||{}, scores:saved.scores||{}, startDate:saved.startDate||'' };
+    if(S.startDate) $('#start').value = S.startDate;
+  }
+}
+renderStorageBar();
+booted = true;
 syncAll(); renderScores();
 </script>
 </body>

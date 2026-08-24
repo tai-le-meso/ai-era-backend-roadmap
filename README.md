@@ -2,7 +2,7 @@
 
 **A 416-lesson, 1,872-hour self-directed curriculum that takes a mid-level backend engineer to senior / solution-architect level — with backend depth and AI engineering running in parallel from week one.**
 
-🌐 **[Open the live site →](https://YOUR-USERNAME.github.io/ai-era-backend-roadmap/)** · 📊 **[Progress tracker](https://YOUR-USERNAME.github.io/ai-era-backend-roadmap/roadmap-tracker.html)**
+🌐 **[Open the live site →](https://tai-le-meso.github.io/ai-era-backend-roadmap/)** · 📊 **[Progress tracker](https://tai-le-meso.github.io/ai-era-backend-roadmap/roadmap-tracker.html)**
 
 ---
 
@@ -113,7 +113,7 @@ lessons/P1..P8/
 1. Open the **[tracker](roadmap-tracker.html)**, set a start date, expand the sub-roadmap you're on.
 2. Each week row links to its four daily lessons. Work through them.
 3. Tick blocks and exit-checklist items as you go.
-4. **Progress lives in the browser tab only** — GitHub Pages serves static files, so use **Export** to copy a JSON snapshot and **Import** to restore it. Keep the snapshot in your own notes.
+4. **Progress saves automatically** in your browser (`localStorage`) — start date, ticked blocks, checklist items and monthly scores are all restored when you reopen the page. Saved data is per-browser and per-origin, so use **Export** / **Import** to back it up or move it between machines. **Clear saved progress** wipes it. If a browser blocks storage (private windows, strict privacy settings) the tracker says so and falls back to Export/Import.
 5. Every sub-roadmap ends with an exit checklist. Don't advance with more than two items failing — add a repair week instead.
 
 The plan assumes 5h/day × 6 days. At 3h/day it runs about 24 months; the block content is unchanged, only the calendar stretches.
@@ -123,7 +123,7 @@ The plan assumes 5h/day × 6 days. At 3h/day it runs about 24 months; the block 
 ## Deploying your own copy
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/ai-era-backend-roadmap.git
+git clone https://github.com/tai-le-meso/ai-era-backend-roadmap.git
 cd ai-era-backend-roadmap
 python3 -m http.server 8000     # then open http://localhost:8000
 ```
