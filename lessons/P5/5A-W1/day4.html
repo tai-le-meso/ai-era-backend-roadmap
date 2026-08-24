@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5A-W1 Day 4 — Finish · Measure · Reason · AI</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5A-W1.html">5A-W1 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5A-W1 · Day 4</span>
+<h1>Finish · Measure · Reason · AI — The banking domain vocabulary</h1>
+<div class="meta">Banking Domain &amp; Ledger Engineering · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><a href="day1.html">Day 1</a><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><span class="cur">Day 4 — Finish · Measure · Reason · AI</span><a href="../5A-W1.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Vocabulary drift is where bugs live</b><span>When your system&#x27;s &#x27;transaction&#x27; means an HTTP request but finance&#x27;s means a balanced journal entry, every conversation with risk, compliance or a partner bank silently miscommunicates. Cataloguing the drift is cheap insurance.</span></div><div class="pt"><b>LLMs drift on banking terms too</b><span>AI definitions of settlement, clearing and nostro are frequently colloquial or US-card-centric. The exercise of diffing AI output against the CPMI glossary and ISO 20022 dictionary trains the habit you will need for compliance content in 5B-W4: verify against primary sources.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Ask AI to define all glossary terms; diff each against the CPMI glossary / ISO 20022 dictionary and record every drift in a &#x27;drift log&#x27; section of the glossary.</li><li>Write the employer-vs-industry mismatch list: at least 5 terms your current system uses differently, with the bug or miscommunication risk each creates.</li><li>Finish and commit docs/domain/banking-glossary.md + ER map (the deliverable).</li><li>Self-check: explain nostro/vostro and suspense accounts out loud, unprompted, in under two minutes.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Authoritative sources (BIS, ISO) exist precisely because informal definitions diverge; use them as the tie-breaker.</li><li>The mismatch list between your employer&#x27;s vocabulary and the industry&#x27;s is a bug-prediction map — keep it updated.</li><li>AI is a fast first draft for definitions and an unreliable final authority; the diff-against-source workflow is the repeatable fix.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">CPMI glossary and the ISO 20022 data dictionary are the tie-breakers for payments vocabulary → apply: cite them in design docs and PR reviews.</div><div class="rem">Clearing exchanges and nets instructions; settlement discharges obligations; they can be hours or days apart → apply: rail finality matrix in 5B-W1.</div><div class="rem">Every AI-provided definition gets diffed against a primary source before it enters documentation → apply: the compliance drill in 5B-W4.</div><div class="rem">A growing suspense balance means unattributed money — page someone → apply: recon break handling in 5A-W6.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://www.bis.org/cpmi/publ/d00b.htm" target="_blank" rel="noopener">BIS CPMI Glossary of payments and settlement terms</a><span class="badge v">verified</span><span class="n">The authoritative glossary. Day 1: look up settlement, clearing, finality, nostro, correspondent banking. Day 4: use it as the arbiter when checking AI-generated definitions.</span></div><div class="res"><a href="https://www.iso20022.org/iso-20022-message-definitions" target="_blank" rel="noopener">ISO 20022 Message Definitions catalogue</a><span class="badge v">verified</span><span class="n">Day 2: browse the business areas (pain/pacs/camt/acmt) — the message names ARE the industry vocabulary (debtor, creditor, agent, settlement). Download one Message Definition Report and skim its data dictionary.</span></div><div class="res"><a href="https://standards.openbanking.org.uk/" target="_blank" rel="noopener">UK Open Banking Standard (API specifications)</a><span class="badge v">verified</span><span class="n">Day 2: read the Read/Write Account and Transaction API spec to see Account, Balance, Transaction, Party modelled in a production bank API — note the multiple balance types and party/account-holder distinction.</span></div><div class="res"><a href="https://www.moderntreasury.com/learn/what-is-a-ledger" target="_blank" rel="noopener">Modern Treasury — What is a Ledger?</a><span class="badge v">verified</span><span class="n">Day 1: fast orientation on ledger, sub-ledger, chart of accounts before the heavier official sources.</span></div><div class="res"><a href="https://www.swift.com/standards/iso-20022" target="_blank" rel="noopener">Swift — ISO 20022 overview</a><span class="badge v">verified</span><span class="n">Day 1: context for why one shared vocabulary matters industry-wide (structured data mandates, e.g. structured addresses after Nov 2026).</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

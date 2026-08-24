@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>4A-W2 · Bounded contexts &amp; context mapping</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="index.html">Phase 4 lessons</a> · <a href="../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p4)">4A · Week 2</span>
+<h1>Bounded contexts &amp; context mapping</h1>
+<div class="meta">Domain-Driven Design · Phase 4 — DDD & Architecture · Backend lane · 22.5h/week · 18h block · 4 days × ~4.5h — Mon–Thu; Friday&#x27;s backend half wraps up measurement + the weekly Reason write-up</div>
+
+<div class="card" id="daylinks"><div class="secH" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px">Study material — learn · do · conclude · remember</div><p style="margin:5px 0"><a href="4A-W2/day1.html">Day 1 — Learn I</a></p><p style="margin:5px 0"><a href="4A-W2/day2.html">Day 2 — Learn II → Design</a></p><p style="margin:5px 0"><a href="4A-W2/day3.html">Day 3 — Build the core</a></p><p style="margin:5px 0"><a href="4A-W2/day4.html">Day 4 — Finish · Measure · Reason · AI</a></p><p class="note" style="margin-top:8px">4 cited sources, 2 verified.</p></div><div class="card day"><div class="dayHead"><span class="dayT">Day 1 — Learn I</span><span class="dayH">~4.5h</span></div>
+<div class="obj"><b>Objective:</b> understand the first half of this block's theory well enough to explain it without notes.</div>
+<table><tr><td class="t">0:00–2:00</td><td>Primary sources — docs, book chapter, or the actual source code. No videos.</td></tr>
+<tr><td class="t">2:00–3:30</td><td>Second source or hands-on exploration of the same topics (REPL, scratch project, EXPLAIN, jshell — whatever fits).</td></tr>
+<tr><td class="t">3:30–4:30</td><td>Write notes <em>in your own words</em>. If you can only copy, you haven't understood it yet.</td></tr></table>
+<h2>Topics for today</h2><ul><li>Bounded Context as a <strong>linguistic</strong> boundary, not a technical one.</li><li>The same word meaning different things (&quot;Account&quot; in ledger vs in identity vs in CRM).</li></ul>
+<div class="art"><b>Artifact:</b> notes page committed to <code>logs/</code>. <b>End-of-day question:</b> which of today's topics could you not yet explain to a junior?</div></div>
+<div class="card day"><div class="dayHead"><span class="dayT">Day 2 — Learn II → Design</span><span class="dayH">~4.5h</span></div>
+<div class="obj"><b>Objective:</b> finish the theory, then design this block's build before writing any real code.</div>
+<table><tr><td class="t">0:00–1:30</td><td>Remaining theory (below).</td></tr>
+<tr><td class="t">1:30–2:30</td><td>Design: sketch the approach, decide the tests, name the risks. Ten minutes of diagram beats an hour of rework.</td></tr>
+<tr><td class="t">2:30–4:30</td><td>Scaffold and start: branch, skeleton, first failing test.</td></tr></table>
+<h2>Remaining topics</h2><ul><li>Context Map relationship patterns: Shared Kernel, Customer/Supplier, Conformist, <strong>Anticorruption Layer</strong>, Open Host Service, Published Language, Separate Ways, Partnership, Big Ball of Mud.</li><li>Context maps as an org-and-politics artefact (Conway&#x27;s Law).</li></ul>
+<h2>Design target</h2><p>Draw the flagship&#x27;s context map: Customer, Account, Ledger, Payment, Notification, Reconciliation, Audit.</p>
+<div class="art"><b>Artifact:</b> design note + branch with a failing test. <b>End-of-day question:</b> what is the riskiest assumption in your design?</div></div>
+<div class="card day"><div class="dayHead"><span class="dayT">Day 3 — Build the core</span><span class="dayH">~4.5h</span></div>
+<div class="obj"><b>Objective:</b> the hardest part working, with tests. Hardest first — while energy is highest.</div>
+<table><tr><td class="t">0:00–4:00</td><td>Deep build. Phone in another room.</td></tr>
+<tr><td class="t">4:00–4:30</td><td>Commit; write down blockers for tomorrow.</td></tr></table>
+<h2>Build tasks</h2><p><strong>Primary task:</strong> Draw the flagship&#x27;s context map: Customer, Account, Ledger, Payment, Notification, Reconciliation, Audit.</p><ul><li>Define each relationship type explicitly.</li></ul>
+<div class="art"><b>Artifact:</b> core implementation committed with passing tests. <b>End-of-day question:</b> what would break this under concurrent load?</div></div>
+<div class="card day"><div class="dayHead"><span class="dayT">Day 4 — Finish · Measure · Reason · AI</span><span class="dayH">~4.5h</span></div>
+<div class="obj"><b>Objective:</b> ship the deliverable, then do the thinking that turns the week into senior-level judgment.</div>
+<table><tr><td class="t">0:00–1:30</td><td>Finish the build: edge cases, break it deliberately, measure. Build an <strong>anticorruption layer</strong> for one external integration (a mock core-banking system with a deliberately awful API).</td></tr>
+<tr><td class="t">1:30–3:00</td><td><strong>Reason (written — never skip):</strong> Where does &quot;Account&quot; mean different things in your map? What does the ACL protect you from, concretely? Which relationship in your map is really a Conformist because of org politics rather than design?</td></tr>
+<tr><td class="t">3:00–4:30</td><td><strong>AI drill:</strong> <em>&quot;Where are my bounded-context boundaries wrong?&quot;</em> Push AI to find a boundary that will leak. Then check whether it would actually leak. Then log what you accepted, rejected, and why.</td></tr></table>
+<div class="art"><b>Artifact:</b> context map diagram + ACL implementation + <code>docs/domain/context-map.md</code>.</div></div>
+<div class="card gate"><h2>Block gate — do not move on until</h2>
+<ul><li><strong>Deliverable shipped:</strong> context map diagram + ACL implementation + <code>docs/domain/context-map.md</code>.</li>
+<li><strong>Self-check passes:</strong> I can explain Conformist vs ACL and when to accept each.</li>
+<li>Ticked in the roadmap tracker (and progress exported).</li></ul>
+<p class="note">Behind? Push the schedule, not the quality — an unshipped deliverable means the block is not done.</p></div>
+<div class="nav"><a href="../P4/4A-W1.html">← 4A-W1 — Strategic DDD: domains and subdoma</a><a href="../P4/4A-W3.html">→ 4A-W3 — Event Storming &amp; discovering the m</a></div></div></body></html>

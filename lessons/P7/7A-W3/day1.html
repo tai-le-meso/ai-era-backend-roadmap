@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>7A-W3 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 7 lessons</a> · <a href="../7A-W3.html">7A-W3 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p7)">7A-W3 · Day 1</span>
+<h1>Learn I — Model Context Protocol: concepts and a server</h1>
+<div class="meta">AI Agents &amp; the MCP / Tool Ecosystem · Phase 7 — Agents & AI-Native Dev · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../7A-W3.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p7)"></i>What I learn</div><div class="pt"><b>Why a protocol</b><span>Without a standard, every model client needs a bespoke integration with every system — the N×M problem. MCP standardises how a client discovers and invokes capabilities, so one server serves any compliant client.</span></div><div class="pt"><b>The three primitives</b><span><strong>Tools</strong> are model-invoked actions with input schemas — the model decides to call them. <strong>Resources</strong> are application-controlled context the client can read and attach. <strong>Prompts</strong> are user-invoked templates. The distinction is about who initiates: model, application, or user.</span></div><div class="pt"><b>Transports and discovery</b><span>stdio for local processes; HTTP-based transport for remote servers. The client discovers available capabilities at connection time through capability negotiation, which is what makes servers hot-swappable.</span></div><div class="pt"><b>MCP is not a replacement for your API</b><span>An MCP server is another consumer of your domain, alongside REST and events. It should call the same application services with the same authorisation, not reach into the database. Treating it as a shortcut is how you end up with a second, unaudited access path.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Read the MCP specification&#x27;s core concepts and pick an SDK.</li><li>Design the read-only tool set: <code>get_account_summary</code>, <code>search_transactions</code>, <code>get_reconciliation_break</code>, <code>list_audit_events</code>.</li><li>Decide what should be a Resource rather than a Tool.</li><li>Confirm every tool will call an existing application service, not the database directly.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Tools versus Resources is a question of who initiates, and getting it right makes the client experience much better.</li><li>An MCP server that bypasses your application layer creates an unaudited access path.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Tools are model-invoked, Resources are app-controlled, Prompts are user-invoked → apply: classify by initiator.</div><div class="rem">MCP solves the N×M integration problem → apply: one server, many clients.</div><div class="rem">MCP server calls application services, never the database → apply: same authorisation, same audit trail.</div><div class="rem">Capability negotiation at connect time → apply: servers can evolve without breaking clients.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">Model Context Protocol</a><span class="badge v">verified</span><span class="n">Specification and SDKs: tools, resources, prompts, transports. Day 1–2.</span></div><div class="res"><a href="https://platform.claude.com/docs/en/intro" target="_blank" rel="noopener">Claude Platform documentation</a><span class="badge v">verified</span><span class="n">Connecting to MCP servers and tool-use behaviour. Day 2.</span></div><div class="res"><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Anthropic: Building Effective AI Agents</a><span class="badge v">verified</span><span class="n">Tool design guidance in the context of agent patterns. Day 2.</span></div><div class="res"><a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP GenAI: Top 10</a><span class="badge v">verified</span><span class="n">Read ahead for LLM08 excessive agency before exposing write tools next week. Day 3.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

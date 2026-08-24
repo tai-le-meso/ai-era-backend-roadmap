@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5A-W4 Day 3 — Build the core</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5A-W4.html">5A-W4 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5A-W4 · Day 3</span>
+<h1>Build the core — Money, monetary precision &amp; currency</h1>
+<div class="meta">Banking Domain &amp; Ledger Engineering · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><a href="day1.html">Day 1</a><a href="day2.html">Day 2</a><span class="cur">Day 3 — Build the core</span><a href="day4.html">Day 4</a><a href="../5A-W4.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Property tests for money</b><span>Properties to assert with jqwik: allocate(n) sums exactly to the original for any amount/n; each part within one minor unit of fair share; allocation is deterministic; add/subtract round-trip; scale always equals the currency&#x27;s minor units. Generators: random amounts across currencies including JPY and BHD, n from 1 to 1000, random weight vectors.</span></div><div class="pt"><b>Where rounding happens is architectural</b><span>Round once, at the boundary where a value becomes real money (a posted entry, a customer display), never mid-calculation. Keep intermediate FX/interest math at higher precision (MathContext), then apply the currency&#x27;s rounding at posting time — and record who received the remainder.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Implement Money (immutable, currency-scale-normalised, HALF_EVEN default) with add/subtract/compare, allocate(n) and allocate(weights).</li><li>Implement FxConversion and a convert() that returns Money plus the conversion record; persist rate provenance on the ledger entry.</li><li>Write jqwik properties: no cent created or lost across random allocations (all currencies, including 0- and 3-decimal); conversion provenance always present.</li><li>Add multi-currency account support: one position per currency, no cross-currency totals in the domain layer.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>The allocation property test is the money analogue of the trial-balance property — cheap to write, catches an entire bug class forever.</li><li>High-precision intermediates + single boundary rounding gives reproducible numbers and a nameable fraction-winner.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Round once at the posting/display boundary; intermediates keep extra precision → apply: interest and FX pipelines in the flagship.</div><div class="rem">Property: sum(allocate(m, n)) == m for all m, n, currency → apply: run it against AI-generated code on day 4.</div><div class="rem">Multi-currency account = map currency→position; totals are report-time projections → apply: balance API extension.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html" target="_blank" rel="noopener">Java 21 BigDecimal API</a><span class="badge v">verified</span><span class="n">Day 1: unscaledValue×10^-scale representation, setScale, why equals() vs compareTo() differ (2.0 != 2.00), and ArithmeticException on inexact ops without a rounding mode.</span></div><div class="res"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/RoundingMode.html" target="_blank" rel="noopener">Java 21 RoundingMode API</a><span class="badge v">verified</span><span class="n">Day 1: all 8 modes with the worked rounding table; HALF_EVEN = banker&#x27;s rounding = IEEE 754 roundTiesToEven, HALF_UP = schoolbook. Memorise the table.</span></div><div class="res"><a href="https://www.iso.org/iso-4217-currency-codes.html" target="_blank" rel="noopener">ISO 4217 Currency Codes (iso.org)</a><span class="badge v">verified</span><span class="n">Day 2: alpha-3/numeric codes and minor units (whether a currency divides into 100 or 1000); the basis for JPY=0, BHD=3 handling.</span></div><div class="res"><a href="https://javamoney.github.io/" target="_blank" rel="noopener">JavaMoney / JSR 354 (Moneta)</a><span class="badge v">verified</span><span class="n">Day 2: the standardised MonetaryAmount/CurrencyUnit API and Moneta RI — compare its design (and its allocation/rounding operators) against your hand-rolled Money before day 3.</span></div><div class="res"><a href="https://martinfowler.com/eaaCatalog/money.html" target="_blank" rel="noopener">Martin Fowler — Money pattern (P of EAA)</a><span class="badge v">verified</span><span class="n">Day 2: the canonical pattern — amount+currency as one value object, allocation instead of division. Frames the day-3 build.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

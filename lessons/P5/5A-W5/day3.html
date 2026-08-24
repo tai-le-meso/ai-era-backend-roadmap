@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5A-W5 Day 3 — Build the core</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5A-W5.html">5A-W5 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5A-W5 · Day 3</span>
+<h1>Build the core — Transaction lifecycle, reversal &amp; adjustment</h1>
+<div class="meta">Banking Domain &amp; Ledger Engineering · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><a href="day1.html">Day 1</a><a href="day2.html">Day 2</a><span class="cur">Day 3 — Build the core</span><a href="day4.html">Day 4</a><a href="../5A-W5.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Sealed-type state machine</b><span>Model each state as a record implementing sealed interface TransactionState, with transitions as methods that exist only on legal source states (Authorised.capture(...) returns Captured; Settled has no cancel()). Illegal transitions become compile errors, and switch exhaustiveness forces handling of every state when a new one is added.</span></div><div class="pt"><b>Type-level immutability for entries</b><span>No setters, final fields, no JPA merge on entry entities, repository exposes save-new and find only — combined with the Week-2 REVOKE, mutation is blocked at both the type and the grant level.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Implement the sealed-state machine with the legal-transition tests from day 1, including partial capture and partial refund invariants.</li><li>Implement reversal and adjustment services producing linked compensating entries via the Week-2 ledger.</li><li>Implement value_date/booking_at and the as-of-date balance query; test the backdating scenario (&#x27;balance on D as known on D+2&#x27;).</li><li>Run the full jqwik trial-balance property over randomized lifecycles including reversals and adjustments.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>State machines in the type system move a whole bug class (illegal transition) from production to compile time.</li><li>Reversals through the same posting path as normal entries inherit all invariants for free — no special-cased &#x27;fix&#x27; code path.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Transitions as methods on the source state type = illegal moves don&#x27;t compile → apply: payment saga states in 5B-W2.</div><div class="rem">Reversals post through the normal ledger API, never a privileged path → apply: keep it true when building ops tooling.</div><div class="rem">Property test the lifecycle including compensations — balance stays zero through any reverse/adjust storm → apply: extend the Week-2 suite today.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://martinfowler.com/apsupp/accounting.pdf" target="_blank" rel="noopener">Martin Fowler — Accounting Patterns (adjustments/reversals sections)</a><span class="badge v">verified</span><span class="n">Day 2: re-read the event adjustment and reversal mechanisms — compensating entries as new facts, never edits. The pattern behind this week&#x27;s build.</span></div><div class="res"><a href="https://martinfowler.com/articles/bitemporal-history.html" target="_blank" rel="noopener">Martin Fowler — Bitemporal History</a><span class="badge v">verified</span><span class="n">Day 2: actual time vs record time; grounds value date vs booking date and the &#x27;balance on D as known on D+2&#x27; query.</span></div><div class="res"><a href="https://docs.tigerbeetle.com/coding/two-phase-transfers/" target="_blank" rel="noopener">TigerBeetle — Two-Phase Transfers</a><span class="badge v">verified</span><span class="n">Day 1: pending→post/void/expire is the authorise→capture/cancel/expire lifecycle in miniature, including partial posting.</span></div><div class="res"><a href="https://docs.stripe.com/refunds" target="_blank" rel="noopener">Stripe Docs — Refund and cancel payments</a><span class="badge v">verified</span><span class="n">Day 1: production semantics of cancel-before-capture vs refund-after-settlement, partial refunds, failed refunds, and refund-as-reversal — map these onto your state machine.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

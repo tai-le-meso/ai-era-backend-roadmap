@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3B-W1 Day 3 — Build the core</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 3 lessons</a> · <a href="../3B-W1.html">3B-W1 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p3)">3B-W1 · Day 3</span>
+<h1>Build the core — 2PC, and why you probably can&#x27;t use it</h1>
+<div class="meta">Distributed Transactions &amp; Observability · Phase 3 — Distributed Systems · ~4.5h</div>
+<div class="daynav"><a href="day1.html">Day 1</a><a href="day2.html">Day 2</a><span class="cur">Day 3 — Build the core</span><a href="day4.html">Day 4</a><a href="../3B-W1.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p3)"></i>What I learn</div><div class="pt"><b>Writing the rejection down</b><span><code>docs/architecture/why-not-2pc.md</code> should state the availability argument, the lock-duration argument, the protocol-support argument, and the narrow cases where 2PC would be right. This document saves the discussion happening again in six months.</span></div><div class="pt"><b>Setting up the alternative</b><span>Everything from here is sagas: give up atomicity, keep availability, and pay for it with compensation and visible intermediate states.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Write <code>docs/architecture/why-not-2pc.md</code> with the experiment log as evidence.</li><li>Include the failure log and the <code>pg_locks</code> output.</li><li>State the three narrow cases where you would use 2PC.</li><li>Commit the demo code so the experiment is repeatable.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>A rejection backed by a reproducible experiment is much stronger than one backed by an article.</li><li>Documenting when you <em>would</em> use something makes the rejection look like judgment rather than fashion.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Write down rejected options with evidence → apply: it is the &#x27;options considered&#x27; section of your future ADRs.</div><div class="rem">Keep the experiment reproducible → apply: the next person can verify rather than trust.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://microservices.io/patterns/data/saga.html" target="_blank" rel="noopener">Pattern: Saga</a><span class="badge">article</span><span class="n">Start here for the vocabulary; the 2PC contrast is on the same site. Day 1.</span></div><div class="res"><a href="https://www.postgresql.org/docs/current/sql-prepare-transaction.html" target="_blank" rel="noopener">PostgreSQL: Two-Phase Commit (PREPARE TRANSACTION)</a><span class="badge">official</span><span class="n">PostgreSQL&#x27;s own 2PC support and its warnings about orphaned prepared transactions. Day 1–2.</span></div><div class="res"><a href="https://jepsen.io/consistency" target="_blank" rel="noopener">Jepsen: Consistency</a><span class="badge v">verified</span><span class="n">Background on atomic commitment vs consensus. Day 1.</span></div><div class="res"><a href="https://www.postgresql.org/docs/current/mvcc.html" target="_blank" rel="noopener">PostgreSQL: Concurrency Control</a><span class="badge v">verified</span><span class="n">Reference while reasoning about prepared-transaction locks. Day 2.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

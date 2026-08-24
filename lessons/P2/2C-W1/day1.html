@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2C-W1 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 2 lessons</a> · <a href="../2C-W1.html">2C-W1 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p2)">2C-W1 · Day 1</span>
+<h1>Learn I — Fundamentals &amp; the log</h1>
+<div class="meta">Kafka &amp; Event-Driven Architecture · Phase 2 — Data & Messaging · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../2C-W1.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p2)"></i>What I learn</div><div class="pt"><b>The log as the primitive</b><span>A partition is an append-only, immutable, ordered sequence. Consumers track an offset; nothing is deleted on read. Retention is by time or size, or compaction keeps the latest value per key. This is the whole model — everything else is bookkeeping on top of it.</span></div><div class="pt"><b>Partitions and ordering</b><span>Ordering is guaranteed <em>within a partition only</em>. The partition is chosen by key hash (or round-robin if keyless). So &#x27;ordered by account&#x27; means &#x27;keyed by account id&#x27; — and that immediately creates the hot-partition problem when one account dominates traffic.</span></div><div class="pt"><b>Producer durability knobs</b><span><code>acks=0</code> fire and forget. <code>acks=1</code> leader only — lose the leader before replication and the record is gone. <code>acks=all</code> waits for all in-sync replicas — combined with <code>min.insync.replicas=2</code> it survives one broker loss. <code>acks=all</code> with <code>min.insync.replicas=1</code> gives you almost nothing, because the leader alone can be the only ISR.</span></div><div class="pt"><b>The consumer poll-loop contract</b><span><code>poll()</code> both fetches records and signals liveness. Take longer than <code>max.poll.interval.ms</code> to process a batch and the broker assumes you are dead and rebalances the partition away — while you are still writing to it. This causes duplicate processing and is one of the classic Kafka production surprises.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Stand up Kafka + Schema Registry in Docker Compose.</li><li>Publish <code>TransferInitiated</code> from the flagship; consume it in a notification handler.</li><li>Read the replication section and write down what <code>min.insync.replicas</code> actually guarantees.</li><li>Predict what happens when you kill a broker mid-produce with <code>acks=1</code>.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Ordering is a per-partition property, so the key choice <em>is</em> the ordering design.</li><li><code>acks=all</code> is only meaningful together with <code>min.insync.replicas ≥ 2</code>.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Ordering holds within a partition only → apply: pick the key by the ordering requirement, then check the skew.</div><div class="rem"><code>acks=all</code> + <code>min.insync.replicas=1</code> gives no real durability → apply: set both explicitly, always.</div><div class="rem">Exceeding <code>max.poll.interval.ms</code> triggers a rebalance mid-processing → apply: keep batches small or increase the interval deliberately.</div><div class="rem">Compaction retains the latest value per key → apply: use for state topics, not for event history.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://kafka.apache.org/documentation/" target="_blank" rel="noopener">Apache Kafka documentation</a><span class="badge v">verified</span><span class="n">§1 Getting Started, §4 Design, §5 Implementation. Day 1.</span></div><div class="res"><a href="https://kafka.apache.org/documentation/#producerconfigs" target="_blank" rel="noopener">Kafka: Producer configs</a><span class="badge">official</span><span class="n">acks, linger.ms, batch.size, compression, enable.idempotence. Day 1–2.</span></div><div class="res"><a href="https://kafka.apache.org/documentation/#consumerconfigs" target="_blank" rel="noopener">Kafka: Consumer configs</a><span class="badge">official</span><span class="n">max.poll.records, max.poll.interval.ms, auto.offset.reset. Day 2.</span></div><div class="res"><a href="https://kafka.apache.org/documentation/#replication" target="_blank" rel="noopener">Kafka: Replication design</a><span class="badge">official</span><span class="n">ISR, leader election, unclean.leader.election.enable. Day 2.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

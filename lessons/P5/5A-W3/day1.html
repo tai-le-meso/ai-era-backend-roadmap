@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5A-W3 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5A-W3.html">5A-W3 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5A-W3 · Day 1</span>
+<h1>Learn I — Balances: ledger, available, pending</h1>
+<div class="meta">Banking Domain &amp; Ledger Engineering · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../5A-W3.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Three balances, three questions</b><span>Ledger (booked/posted) balance = sum of settled entries: &#x27;what is legally mine now&#x27;. Pending balance = posted plus in-flight entries: &#x27;what it will be if everything lands&#x27;. Available balance = posted minus pending outgoing (and minus holds, plus overdraft headroom): &#x27;what can I spend right now without risk of overdrawing&#x27;. The app showing two different numbers is correct behaviour, not a bug.</span></div><div class="pt"><b>Authorisation holds</b><span>A card authorisation reserves amount against available balance without posting to the ledger; it later captures (becomes a posted entry, possibly for a different amount), is voided, or expires after a scheme-defined window (days). Holds therefore need their own lifecycle and an expiry sweeper — TigerBeetle models this as pending transfers with post/void/timeout.</span></div><div class="pt"><b>Overdrafts and credit limits</b><span>Available = posted − holds − pending-out + overdraft limit. The overdraft is a product attribute joined in at check time, not baked into stored balances, because limits change without any money moving.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Read the Modern Treasury ledger-balances post; write the formula for each of the three balances in terms of your ledger_line and hold tables.</li><li>Read TigerBeetle two-phase transfers; map pending/post/void/expire onto your hold lifecycle.</li><li>Enumerate 5 scenarios (hold placed, hold expired, capture below hold amount, pending inbound, overdraft granted) and compute all three balances by hand for each.</li><li>Write those 5 scenarios as failing acceptance tests against a balance API you will implement day 3.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Balances are answers to different questions, so an account exposes a set of typed balances — mirroring what Open Banking APIs already do.</li><li>Holds are not ledger entries: they affect available balance only, and they expire — someone must own the expiry job.</li><li>Available balance is the only one you may authorise against; posted balance is the only one you may report as fact.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">available = posted − holds − pending outgoing + overdraft headroom → apply: the authorisation check in 5B-W3&#x27;s limits engine.</div><div class="rem">Capture can settle for less than the hold (partial capture); the residue must release → apply: state machine in 5A-W5.</div><div class="rem">Holds expire on a scheme window; missing the expiry sweep silently starves customer spending power → apply: scheduled job + metric on active-hold age.</div><div class="rem">Show posted balance on statements, available balance at point of spend → apply: the PM explanation in this week&#x27;s check.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://www.moderntreasury.com/journal/how-to-think-about-ledger-balances" target="_blank" rel="noopener">Modern Treasury — How to Think About Ledger Balances</a><span class="badge v">verified</span><span class="n">Day 1: posted vs pending vs available balances defined precisely (available assumes all pending outgoing is gone) — the exact three-type model you will build.</span></div><div class="res"><a href="https://www.moderntreasury.com/journal/how-to-scale-a-ledger-part-iv" target="_blank" rel="noopener">Modern Treasury — How to Scale a Ledger, Part IV: Recording and Authorization</a><span class="badge v">verified</span><span class="n">Day 2: recording vs authorizing modes, version locking and balance-condition locking — directly answers &#x27;where must the balance check happen&#x27;. Reused in 5B-W3.</span></div><div class="res"><a href="https://docs.tigerbeetle.com/coding/two-phase-transfers/" target="_blank" rel="noopener">TigerBeetle — Two-Phase Transfers</a><span class="badge v">verified</span><span class="n">Day 1–2: pending transfers reserving amounts in debits_pending/credits_pending with post/void/expire resolution — a clean reference model for authorisation holds with expiry.</span></div><div class="res"><a href="https://www.postgresql.org/docs/current/transaction-iso.html" target="_blank" rel="noopener">PostgreSQL — Transaction Isolation</a><span class="badge v">verified</span><span class="n">Day 2–3: what READ COMMITTED does and does not protect during concurrent balance updates; grounds the hot-account discussion (links back to 2A-W3).</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

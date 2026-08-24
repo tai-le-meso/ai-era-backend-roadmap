@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="#2a78d6,#eb6834,#1baf7a,#eda100,#e87ba4,#008300,#4a3aa7,#e34948">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-Era Backend Engineer — Roadmap Tracker (parallel · ~14.5 mo)</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;
+ --surface-1:#fcfcfb; --plane:#f9f9f7;
+ --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+ --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,0.10);
+ --fill:#2a78d6; --track:#cde2fb;
+ --good:#0ca30c; --warning:#fab219;
+ --p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;
+ --p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+ --radius:10px; --baseop:0.26;
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
+:root[data-theme="dark"]{color-scheme:dark; --baseop:0.42;
+ --surface-1:#1a1a19; --plane:#0d0d0d;
+ --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+ --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,0.10);
+ --fill:#3987e5; --track:#104281;
+ --good:#0ca30c; --warning:#fab219;
+ --p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;
+ --p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767;}
+@media (prefers-color-scheme:dark){
+ :root:where(:not([data-theme="light"])){color-scheme:dark; --baseop:0.42;
+ --surface-1:#1a1a19; --plane:#0d0d0d; --ink:#ffffff; --ink-2:#c3c2b7;
+ --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,0.10);
+ --fill:#3987e5; --track:#104281;
+ --p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;
+ --p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767;}}
+body{margin:0;background:var(--plane);color:var(--ink);font-size:14px;line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 20px 80px}
+h1{font-size:22px;font-weight:650;margin:0;letter-spacing:-0.01em}
+.sub{color:var(--ink-2);font-size:13px;margin-top:4px}
+header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.btn{font:inherit;font-size:12.5px;color:var(--ink-2);background:var(--surface-1);
+ border:1px solid var(--ring);border-radius:8px;padding:6px 11px;cursor:pointer}
+.btn:hover{color:var(--ink);border-color:var(--axis)}
+.btn.on{color:var(--ink);border-color:var(--fill);box-shadow:inset 0 0 0 1px var(--fill)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.card{background:var(--surface-1);border:1px solid var(--ring);border-radius:var(--radius)}
+/* hero + tiles */
+.hero{display:grid;grid-template-columns:minmax(200px,240px) 1fr;gap:16px;margin-bottom:16px;align-items:stretch}
+.heroBox{padding:18px 20px;display:flex;flex-direction:column;justify-content:center}
+.heroNum{font-size:52px;font-weight:650;letter-spacing:-0.02em;line-height:1}
+.heroLbl{color:var(--ink-2);font-size:12.5px;margin-top:6px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:16px}
+.tile{padding:13px 15px;display:flex;flex-direction:column;justify-content:center}
+.tileLbl{color:var(--ink-2);font-size:11.5px;letter-spacing:.02em}
+.tileVal{font-size:24px;font-weight:650;margin-top:3px;letter-spacing:-0.01em}
+.tileSub{color:var(--muted);font-size:11.5px;margin-top:2px}
+/* section */
+section{margin-top:26px}
+h2{font-size:13px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;
+ color:var(--ink-2);margin:0 0 10px}
+.note{color:var(--muted);font-size:12px;margin:0 0 10px}
+/* timeline */
+.tl{padding:16px}
+.tlBar{display:flex;gap:2px;height:30px}
+.laneLbl{font-size:11px;color:var(--muted);margin:0 0 5px}
+.tlSeg{position:relative;border-radius:3px;overflow:hidden;cursor:pointer;
+ display:flex;align-items:center;justify-content:center;min-width:0}
+.tlSeg .base{position:absolute;inset:0;opacity:var(--baseop)}
+.tlSeg .prog{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.tlSeg span{position:relative;font-size:10.5px;font-weight:650;color:var(--ink);
+ white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 3px}
+.tlSeg:hover{outline:2px solid var(--axis);outline-offset:1px}
+.tlAxis{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;
+ margin-top:7px;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+/* filters */
+.filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+input[type=search],select{font:inherit;font-size:12.5px;color:var(--ink);
+ background:var(--surface-1);border:1px solid var(--ring);border-radius:8px;padding:6px 10px}
+input[type=search]{min-width:200px}
+/* sub cards */
+.sr{margin-bottom:10px;overflow:hidden}
+.srHead{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+ padding:13px 16px;cursor:pointer}
+.srHead:hover{background:color-mix(in srgb,var(--ink) 3%,transparent)}
+.chip{font-size:11px;font-weight:650;padding:3px 7px;border-radius:6px;color:#fff;white-space:nowrap}
+.srName{font-weight:600;font-size:14.5px}
+.srMeta{color:var(--muted);font-size:11.5px;margin-top:2px}
+.srRight{display:flex;align-items:center;gap:12px}
+.meter{width:132px}
+.mTrack{height:7px;background:var(--track);border-radius:4px;overflow:hidden}
+.mFill{height:100%;background:var(--fill);border-radius:4px;transition:width .18s}
+.mTxt{font-size:11px;color:var(--ink-2);margin-top:4px;font-variant-numeric:tabular-nums}
+.gate{font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;white-space:nowrap;
+ border:1px solid var(--ring);color:var(--muted)}
+.gate.pass{color:#fff;background:var(--good);border-color:var(--good)}
+.body{display:none;border-top:1px solid var(--grid);padding:4px 16px 16px}
+.sr.open .body{display:block}
+.outcome{font-size:13px;color:var(--ink-2);border-left:2px solid var(--fill);
+ padding:8px 0 8px 12px;margin:12px 0 4px}
+h3{font-size:11.5px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;
+ color:var(--muted);margin:16px 0 6px}
+.wk{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--grid)}
+.wk:last-child{border-bottom:0}
+.wkT{font-size:13px;font-weight:550}
+.wkD{font-size:12px;color:var(--ink-2);margin-top:2px}
+.wkD b{font-weight:600;color:var(--ink-2)}
+.wkD a.lsn{color:var(--fill);font-weight:550;text-decoration:none}
+.wkD a.lsn:hover{text-decoration:underline}
+.gateNote a{color:var(--fill)}
+.wk.done .wkT{color:var(--muted);text-decoration:line-through}
+.ck{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:5px 0;font-size:12.5px}
+.ck label{cursor:pointer}
+.ck.done label{color:var(--muted);text-decoration:line-through}
+input[type=checkbox]{width:16px;height:16px;margin:2px 0 0;accent-color:var(--fill);cursor:pointer}
+.gateNote{font-size:12px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+/* scores */
+.sc{padding:16px}
+.scGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px 20px;margin-top:6px}
+.spark{}
+.spTop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.spLbl{font-size:12px;font-weight:550}
+.spVal{font-size:15px;font-weight:650;font-variant-numeric:tabular-nums}
+.spNone{font-size:12px;color:var(--muted)}
+svg{display:block;overflow:visible}
+.entry{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-top:4px;
+ padding-bottom:14px;border-bottom:1px solid var(--grid);margin-bottom:14px}
+.fld{display:flex;flex-direction:column;gap:4px}
+.fld span{font-size:11px;color:var(--muted)}
+.fld input,.fld select{width:100%}
+.sInp{width:56px;font:inherit;font-size:12.5px;color:var(--ink);background:var(--surface-1);
+ border:1px solid var(--ring);border-radius:6px;padding:5px 6px;text-align:center;
+ font-variant-numeric:tabular-nums}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid)}
+th{color:var(--ink-2);font-weight:600;font-size:11.5px;letter-spacing:.02em;
+ text-transform:uppercase;position:sticky;top:0;background:var(--surface-1)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tblWrap{overflow-x:auto;padding:0 4px}
+td.nw,th.nw{white-space:nowrap}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:var(--plane);border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+/* io */
+textarea{width:100%;min-height:110px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+ font-size:11.5px;color:var(--ink);background:var(--plane);border:1px solid var(--ring);
+ border-radius:8px;padding:10px;resize:vertical}
+.ioBox{padding:16px;display:none}
+.ioBox.open{display:block}
+.warnBar{display:flex;gap:9px;align-items:flex-start;padding:11px 14px;margin-bottom:16px;
+ border:1px solid var(--ring);border-left:3px solid var(--warning);border-radius:8px;
+ background:var(--surface-1);font-size:12.5px;color:var(--ink-2)}
+.warnBar b{color:var(--ink)}
+footer{margin-top:34px;color:var(--muted);font-size:11.5px;text-align:center}
+@media (max-width:760px){
+ .hero{grid-template-columns:1fr}
+ .tiles{grid-template-columns:repeat(2,1fr)}
+ .tileVal{font-size:22px}
+ .srHead{grid-template-columns:auto 1fr;gap:10px}
+ .srRight{grid-column:1/-1;justify-content:space-between}
+ .meter{width:100%;flex:1}
+ .tlSeg span{display:none}
+}
+@media print{.btn,.filters,.ioBox,.entry{display:none!important}
+ body{background:#fff}.sr .body{display:block!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+ <div>
+  <h1>AI-Era Backend Engineer — Roadmap Tracker</h1>
+  <div class="sub">Two parallel lanes &middot; 1,872 hours &middot; 5h/day &times; 6 days (22.5h backend + 7.5h AI) &middot; ~14.5 months &middot; flagship: mini core-banking platform</div>
+ </div>
+ <div class="row">
+  <label class="btn" style="display:flex;gap:6px;align-items:center">Start
+   <input type="date" id="start" style="font:inherit;font-size:12px;border:0;background:transparent;color:var(--ink)"></label>
+  <button class="btn" id="btnAll">Expand all</button>
+  <button class="btn" id="btnTable">Table view</button>
+  <button class="btn" id="btnExport">Export</button>
+  <button class="btn" id="btnImport">Import</button>
+  <button class="btn" id="theme">Light / dark</button>
+ </div>
+</header>
+
+<div class="warnBar"><span>&#9888;</span><div><b>Progress lives in this tab only.</b>
+ Artifacts can't use browser storage, so ticking a box is not saved when you close or reload.
+ Hit <b>Export</b> to copy a JSON snapshot, and <b>Import</b> to paste it back next time. Day-by-day lesson links are relative — they open when this tracker is opened from your <code>ai-era-backend</code> folder.</div></div>
+
+<div class="card ioBox" id="io">
+ <h2 style="margin-top:0">Progress snapshot</h2>
+ <p class="note">Export writes your current state here &mdash; copy it somewhere safe (e.g. <code>logs/progress.json</code> in your upskills folder). To restore, paste a snapshot in and press Restore.</p>
+ <textarea id="ioTxt" spellcheck="false" placeholder="Paste a previously exported snapshot here, then press Restore."></textarea>
+ <div class="row" style="margin-top:10px"><button class="btn" id="ioDo">Restore from JSON</button>
+ <button class="btn" id="ioClose">Close</button></div>
+</div>
+
+<div class="hero">
+ <div class="card heroBox">
+  <div class="heroNum" id="heroNum">0%</div>
+  <div class="heroLbl" id="heroLbl"></div>
+ </div>
+ <div class="tiles">
+  <div class="card tile" id="tNow"><div class="tileLbl">Current</div><div class="tileVal"></div><div class="tileSub"></div></div>
+  <div class="card tile" id="tMonth"><div class="tileLbl">Roadmap month</div><div class="tileVal"></div><div class="tileSub"></div></div>
+  <div class="card tile" id="tWeeks"><div class="tileLbl">Blocks (18h)</div><div class="tileVal"></div><div class="tileSub"></div></div>
+  <div class="card tile" id="tHours"><div class="tileLbl">Hours</div><div class="tileVal"></div><div class="tileSub"></div></div>
+  <div class="card tile" id="tGates"><div class="tileLbl">Gates</div><div class="tileVal"></div><div class="tileSub"></div></div>
+  <div class="card tile" id="tChecks"><div class="tileLbl">Checklist</div><div class="tileVal"></div><div class="tileSub"></div></div>
+ </div>
+</div>
+
+<section>
+ <h2>Timeline &mdash; two parallel lanes, ~62 calendar weeks (width &prop; hours)</h2>
+ <div class="card tl">
+  <div class="laneLbl">Backend lane &mdash; 22.5h/week &middot; phases 1&ndash;5 + 8</div><div class="tlBar" id="tlBarB"></div><div class="laneLbl" style="margin-top:10px">AI lane &mdash; 7.5h/week &middot; phases 6&ndash;7, interleaved (7B spans the whole year)</div><div class="tlBar" id="tlBarA"></div>
+  <div class="tlAxis"><span>month 0 &middot; start</span><span id="tlAxisR"></span></div>
+  <div class="legend" id="legend"></div>
+ </div>
+</section>
+
+<section>
+ <h2>Sub-roadmaps</h2>
+ <div class="filters">
+  <input type="search" id="q" placeholder="Search topics, weeks, deliverables…" aria-label="Search">
+  <select id="fPhase" aria-label="Filter by phase"><option value="all">All phases</option>
+   <option value="1">Phase 1</option><option value="2">Phase 2</option><option value="3">Phase 3</option>
+   <option value="4">Phase 4</option><option value="5">Phase 5</option><option value="6">Phase 6</option>
+   <option value="7">Phase 7</option><option value="8">Phase 8</option></select>
+  <select id="fState" aria-label="Filter by state"><option value="all">Any state</option>
+   <option value="todo">Not started</option><option value="wip">In progress</option>
+   <option value="done">Weeks complete</option><option value="gated">Gate passed</option></select>
+ </div>
+ <div id="list"></div>
+</section>
+
+<section id="tableSec" style="display:none">
+ <h2>Table view</h2>
+ <div class="card tblWrap">
+  <table id="tbl"><thead><tr>
+   <th>ID</th><th>Sub-roadmap</th><th class="n">Phase</th><th class="n">Blocks</th><th class="n">Hours</th>
+   <th class="n nw">Months</th><th>Ships</th><th class="n">Done</th><th class="n">%</th>
+   <th class="n">Checklist</th><th>Gate</th></tr></thead><tbody></tbody></table>
+ </div>
+</section>
+
+<section>
+ <h2>Monthly self-assessment &mdash; score each area 1&ndash;5</h2>
+ <div class="card sc">
+  <div class="entry" id="entry"></div>
+  <p class="note" id="scNote"></p>
+  <div class="scGrid" id="scGrid"></div>
+ </div>
+</section>
+
+<footer>Generated from the 19 markdown files + <code>00-PLAN-14MO-PARALLEL.md</code> &middot;
+ 104 &times; 18h blocks &middot; 1,872 hours &middot; two lanes finishing together at week 62.4 (~month 14.4)</footer>
+</div>
+<script>
+const D = {"subs":[{"id":"1A","name":"Modern Java Mastery","phase":1,"file":"PHASE-1/1A-modern-java.md","weeks":7,"hours":126,"mStart":0.0,"mEnd":1.29,"flagship":"v0 — service skeleton","outcome":"I can write Java that a senior reviewer cannot fault, and I can explain *why* every construct I used is the right one — including the runtime consequences of `equals`/`hashCode`, immutability, and the type system.","weekList":[{"n":1,"title":"Language fundamentals audit & the type system","deliverable":"repo initialised, README with architecture sketch, first commit.","selfcheck":"I can explain erasure to a junior with a concrete failing example."},{"n":2,"title":"Collections, deeply","deliverable":"`collections-benchmark.md` with your numbers, not the internet's.","selfcheck":"I can draw `HashMap` resize on a whiteboard."},{"n":3,"title":"Equality, hashing & object lifecycle","deliverable":"failing-then-passing test that proves the entity-equality trap.","selfcheck":"I know which strategy I would defend in a code review and why."},{"n":4,"title":"Generics, exceptions & API design","deliverable":"exception hierarchy + global handler + integration test of error shape.","selfcheck":"I can explain PECS with an example from my own code."},{"n":5,"title":"Streams & functional programming","deliverable":"side-by-side implementations + a short note on which you'd ship.","selfcheck":"I can state exactly when a stream is evaluated."},{"n":6,"title":"Immutability, records, sealed classes & modern Java","deliverable":"value-object package with full test coverage; state machine diagram.","selfcheck":"I can name a case where a record is the wrong choice."},{"n":7,"title":"Reflection, annotations, serialization, class loading + consolidation","deliverable":"**v0 tagged in the flagship repo** + `docs/adr/0001-project-structure.md`.","selfcheck":"I can explain why self-invocation breaks `@Transactional`."}],"exitChecklist":["Flagship v0 runs via `docker compose up`, with a green test pyramid using Testcontainers","I can explain `HashMap` internals, erasure, and the `equals`/`hashCode` contract without notes","Every DTO is a record; every value object is immutable and self-validating","One state machine is modelled with sealed types and exhaustive matching","Error responses follow RFC 9457 and are integration-tested","ADR-0001 written; I can defend the package structure against a challenge","I have a written list of at least 5 things AI told me that were wrong or shallow"],"track":"backend"},{"id":"1B","name":"JVM Internals, Concurrency & Performance","phase":1,"file":"PHASE-1/1B-jvm-concurrency-performance.md","weeks":6,"hours":108,"mStart":1.29,"mEnd":2.4,"flagship":"v0.5 — measured","outcome":"When a service is slow, I do not guess. I profile it, name the mechanism (GC pause / lock contention / allocation rate / JIT deopt), prove it with a benchmark, and explain the fix in terms of the JVM's actual behaviour.","weekList":[{"n":1,"title":"JVM memory model & the object lifecycle in memory","deliverable":"`docs/perf/heap-analysis.md` with three leaks found and fixed.","selfcheck":"I can name every JVM memory region and what OOMs each."},{"n":2,"title":"Garbage collection: G1, ZGC, and the pause you can actually feel","deliverable":"`docs/perf/gc-comparison.md` with real plots and a recommendation.","selfcheck":"I can read a GC log and say what the collector was doing."},{"n":3,"title":"JIT, profiling & diagnostics","deliverable":"flame graph + before/after numbers + written explanation of the mechanism.","selfcheck":"I can read a thread dump and identify a blocked thread's owner."},{"n":4,"title":"Concurrency primitives & the Java Memory Model","deliverable":"three implementations + a race-condition test + correctness argument.","selfcheck":"I can explain happens-before without saying \"it just works\"."},{"n":5,"title":"Virtual threads, structured concurrency & thread-safety design","deliverable":"`docs/adr/0002-threading-model.md` backed by measurements.","selfcheck":"I can identify a pinning case by reading code."},{"n":6,"title":"Performance engineering & JMH + consolidation","deliverable":"**v0.5 tagged** — JMH suite + load profile + `docs/perf/baseline.md`.","selfcheck":"I can explain coordinated omission and how my tool handles it."}],"exitChecklist":["I can read GC logs, a heap dump, a thread dump, and a flame graph unaided","GC comparison document exists with my own measurements and a defended choice","Three concurrency implementations exist with a written happens-before argument","A pinning case was found and fixed; threading-model ADR is written","JMH suite + load profile committed; performance baseline recorded","I found at least 3 concurrency bugs in AI-generated code and can explain each","p50/p95/p99 for the flagship's main endpoint are known numbers, not guesses"],"track":"backend"},{"id":"2A","name":"PostgreSQL Deep Dive","phase":2,"file":"PHASE-2/2A-postgresql.md","weeks":6,"hours":108,"mStart":2.4,"mEnd":3.51,"flagship":"v1 — Monolith on a real schema","outcome":"I can design a transactional schema, predict what the planner will do, read `EXPLAIN ANALYZE` fluently, and explain isolation-level behaviour with concrete anomalies I have reproduced myself.","weekList":[{"n":1,"title":"SQL you thought you knew","deliverable":"`db/schema.sql` + `db/queries/` with a seeded 1M-row dataset.","selfcheck":"I can write a running balance with a window function from memory."},{"n":2,"title":"MVCC, transactions & isolation levels","deliverable":"`IsolationAnomalyTest` — one test per anomaly, all green.","selfcheck":"I can define write skew and give a banking example unprompted."},{"n":3,"title":"Locks, deadlocks & contention","deliverable":"`docs/db/locking.md` with the deadlock report and the hot-row fix.","selfcheck":"I can name the two most common causes of production deadlocks."},{"n":4,"title":"Indexes & the query planner","deliverable":"`docs/db/query-tuning.md` — 5 queries, before/after plans and timings.","selfcheck":"I can spot a bad row estimate in a plan in under 30 seconds."},{"n":5,"title":"Partitioning, replication, pooling & vacuum","deliverable":"partitioned table + replica routing + a read-after-write test.","selfcheck":"I can explain why a transaction-pooling PgBouncer breaks prepared statements."},{"n":6,"title":"Production concerns & consolidation","deliverable":"**v1 tagged** + `docs/db/production-runbook.md`.","selfcheck":"I can perform an online column rename with expand-contract from memory."}],"exitChecklist":["Anomaly test suite green: dirty read, non-repeatable read, phantom, write skew, lost update","I can read `EXPLAIN ANALYZE` and diagnose from rows-estimated vs rows-actual","5 queries measurably tuned with documented before/after plans","Partitioning works with proven pruning; read-replica read-after-write bug reproduced and fixed","A zero-downtime migration was executed under load","Connection pool sized from measurement, not from a blog post","v1 tagged; k6 baseline re-recorded"],"track":"backend"},{"id":"2B","name":"Redis, Caching & Idempotency","phase":2,"file":"PHASE-2/2B-redis-caching.md","weeks":3,"hours":54,"mStart":3.51,"mEnd":4.06,"flagship":"v1.5 — cached","outcome":"I can answer the roadmap's key question — *when should Redis NOT be used?* — with reasons, and I can implement caching, distributed locking, rate limiting and idempotency without introducing correctness bugs.","weekList":[{"n":1,"title":"Data structures, cache patterns & invalidation","deliverable":"cache layer + stale-read test + `docs/adr/0003-caching-strategy.md`.","selfcheck":"I can explain cache stampede and two independent mitigations."},{"n":2,"title":"Distributed locks, atomic operations & rate limiting","deliverable":"lock + rate limiter with correctness tests; written failure analysis.","selfcheck":"I can explain fencing tokens and why TTL alone is insufficient."},{"n":3,"title":"Idempotency, Streams/Pub-Sub & consolidation","deliverable":"**v1.5 tagged** + `docs/adr/0004-idempotency.md`.","selfcheck":"I can explain why an idempotency check outside the business"}],"exitChecklist":["A written, defensible answer to \"when should Redis NOT be used?\"","Cache-aside with invalidation and stampede protection, with a stale-read test","Correct distributed lock + a test proving the naive version is unsafe","Token-bucket rate limiter validated under concurrent load","Idempotent transfer endpoint passing a 50-parallel-duplicate test","ADRs 0003 and 0004 written and defensible","v1.5 tagged"],"track":"backend"},{"id":"2C","name":"Kafka & Event-Driven Architecture","phase":2,"file":"PHASE-2/2C-kafka-event-driven.md","weeks":4,"hours":72,"mStart":4.06,"mEnd":4.8,"flagship":"v2 — Event-driven","outcome":"I can build an event-driven system that survives duplicate messages, consumer restarts, rebalances, and schema evolution — and I can explain exactly what \"exactly-once\" does and does not mean.","weekList":[{"n":1,"title":"Fundamentals & the log","deliverable":"working produce/consume path + `docs/kafka/durability-experiments.md`.","selfcheck":"I can state what `acks=all` + `min.insync.replicas=1` actually guarantees."},{"n":2,"title":"Delivery semantics, ordering, retries & DLT","deliverable":"idempotent consumers + retry/DLT + chaos test suite.","selfcheck":"I can explain why exactly-once across Kafka *and* PostgreSQL requires"},{"n":3,"title":"Schema Registry, Avro & Kafka Streams","deliverable":"Avro schemas in a registry, CI compatibility gate, one Streams job.","selfcheck":"I can name three schema changes that break backward compatibility."},{"n":4,"title":"Event-driven architecture, Outbox & consolidation","deliverable":"**v2 tagged** + `docs/adr/0005-event-driven-outbox.md` + event-flow diagram.","selfcheck":"I can explain the dual-write problem in 60 seconds with a diagram."}],"exitChecklist":["Durability experiments run: I have observed real data loss with weak `acks`","Every consumer is idempotent, with a duplicate-delivery test proving it","Retry topic + DLT working, with poison-pill handling","Avro + Schema Registry with a CI compatibility gate; one real evolution performed","Outbox pattern implemented and proven by a kill-between-commit-and-publish test","One Kafka Streams job running with a state store","ADR-0005 written; I can argue both for and against event-driven here","v2 tagged"],"track":"backend"},{"id":"3A","name":"Reliability, Consistency & Coordination","phase":3,"file":"PHASE-3/3A-reliability-consistency.md","weeks":7,"hours":126,"mStart":4.8,"mEnd":6.09,"flagship":"v2.5 — Resilient","outcome":"Given any system diagram, I can enumerate what fails, what the blast radius is, and which pattern contains it — before it happens in production.","weekList":[{"n":1,"title":"Failure models & timeouts","deliverable":"timeout-budget table + fault-injection harness.","selfcheck":"Every outbound call in my service has an explicit, justified timeout."},{"n":2,"title":"Retry, backoff & the retry storm","deliverable":"retry config + a metrics screenshot showing storm and mitigation.","selfcheck":"I can explain retry amplification with a number."},{"n":3,"title":"Circuit breakers, bulkheads & load shedding","deliverable":"**v2.5 tagged** + `docs/reliability/degradation-matrix.md`.","selfcheck":"I can explain why a bulkhead and a circuit breaker solve different problems."},{"n":4,"title":"Consistency models","deliverable":"`docs/architecture/consistency-map.md` — one row per read path.","selfcheck":"I can state PACELC and apply it to my own system."},{"n":5,"title":"Idempotency & deduplication at system scale","deliverable":"end-to-end duplication test suite, green.","selfcheck":"I can justify my dedupe window with arithmetic."},{"n":6,"title":"Distributed coordination","deliverable":"leader-elected relay + partition test + failover-time measurement.","selfcheck":"I can explain Raft leader election and log replication on a whiteboard."},{"n":7,"title":"Data distribution & consolidation","deliverable":"consistent-hashing implementation + `docs/architecture/sharding-analysis.md`.","selfcheck":"I can explain why W+R>N does not give linearizability."}],"exitChecklist":["Every outbound call has a justified timeout inside a documented budget","Retry storm reproduced and mitigated; amplification factor computed","Circuit breakers, bulkheads and load shedding working under fault injection","Degradation matrix written — one decision per dependency","Consistency map written — one row per read path with the weakest tolerable model","End-to-end duplication test green with a justified dedupe window","Leader election working with a measured failover time","Consistent hashing implemented and measured","v2.5 tagged"],"track":"backend"},{"id":"3B","name":"Distributed Transactions & Observability","phase":3,"file":"PHASE-3/3B-transactions-observability.md","weeks":6,"hours":108,"mStart":6.09,"mEnd":7.2,"flagship":"v3 — Observable & transactional","outcome":"I can implement a saga with compensation that survives every failure mode I can name, and I can debug a distributed request end-to-end from a trace instead of by guessing.","weekList":[{"n":1,"title":"2PC, and why you probably can't use it","deliverable":"2PC demo + failure log + `docs/architecture/why-not-2pc.md`.","selfcheck":"I can explain the coordinator-failure blocking problem clearly."},{"n":2,"title":"Sagas: choreography","deliverable":"choreographed saga with compensations + state-diagram.","selfcheck":"I can name a non-compensable step and my strategy for it."},{"n":3,"title":"Sagas: orchestration + failure analysis","deliverable":"orchestrated saga + 7-failure test matrix + `docs/adr/0006-saga-style.md`.","selfcheck":"I can recover a saga after an orchestrator crash mid-flight."},{"n":4,"title":"Metrics: RED, USE & business signals","deliverable":"Grafana dashboard + `docs/observability/metrics-catalog.md`.","selfcheck":"I can write PromQL for p99 latency by endpoint from memory."},{"n":5,"title":"Logging & distributed tracing","deliverable":"connected end-to-end trace through Kafka, with a screenshot in docs.","selfcheck":"I can propagate trace context through a Kafka message manually."},{"n":6,"title":"SLOs, alerting & consolidation","deliverable":"**v3 tagged** + SLO doc + 3 runbooks + 1 real postmortem.","selfcheck":"I can explain multi-burn-rate alerting and why single-threshold alerts fail."}],"exitChecklist":["Saga implemented both ways; ADR-0006 defends the chosen style","All 7 failure scenarios from the source document covered by automated tests","RED + USE + business metrics on one dashboard that answers \"healthy?\" in 10 seconds","End-to-end trace connected across the Kafka hop, correlated with logs","4 SLOs with error budgets and burn-rate alerts","One game day run and one postmortem written","v3 tagged"],"track":"backend"},{"id":"4A","name":"Domain-Driven Design","phase":4,"file":"PHASE-4/4A-domain-driven-design.md","weeks":7,"hours":126,"mStart":7.2,"mEnd":8.49,"flagship":"v4 — Modular Monolith","outcome":"I can take an ambiguous business conversation and produce a bounded-context map, an aggregate design with defensible boundaries, and code where the domain model — not the ORM — is in charge.","weekList":[{"n":1,"title":"Strategic DDD: domains and subdomains","deliverable":"`docs/domain/subdomain-map.md` with classification and rationale.","selfcheck":"I can explain why classifying a subdomain wrong costs money."},{"n":2,"title":"Bounded contexts & context mapping","deliverable":"context map diagram + ACL implementation + `docs/domain/context-map.md`.","selfcheck":"I can explain Conformist vs ACL and when to accept each."},{"n":3,"title":"Event Storming & discovering the model","deliverable":"event-storm photo/diagram + `docs/domain/event-catalogue.md`.","selfcheck":"I can tell a command from an event from a policy, every time."},{"n":4,"title":"Tactical DDD: entities, value objects, aggregates","deliverable":"aggregate implementations + invariant tests + contention measurement.","selfcheck":"I can state the four aggregate design rules and why each exists."},{"n":5,"title":"Repositories, domain services, domain events & application services","deliverable":"clean domain/application separation with a package-structure test","selfcheck":"I can point at any class and say which layer it belongs in and why."},{"n":6,"title":"Architecture styles: hexagonal, clean, modular monolith","deliverable":"**v4 tagged** + ArchUnit boundary tests + `docs/adr/0007-modular-monolith.md`.","selfcheck":"I can draw hexagonal architecture and name every port and adapter in my repo."},{"n":7,"title":"Domain modelling under pressure + consolidation","deliverable":"bitemporal entity + CQRS read model + updated context map.","selfcheck":"I can explain valid time vs transaction time with a banking example."}],"exitChecklist":["Subdomain map with core/supporting/generic classification and rationale","Context map with explicit relationship patterns; one ACL implemented","Event storm run; event catalogue produced; commands vs events correctly separated","Aggregates follow all four design rules; invariants tested; contention measured","Domain vs application service separation enforced by ArchUnit","Modular monolith with enforced module boundaries; ADR-0007 written","One bitemporal model and one CQRS read model working","v4 tagged"],"track":"backend"},{"id":"4B","name":"System Design & Architecture Practice","phase":4,"file":"PHASE-4/4B-system-design.md","weeks":6,"hours":108,"mStart":8.49,"mEnd":9.6,"flagship":"v4.5 — Service boundaries extracted","outcome":"I can run a 45-minute whiteboard design session end-to-end — requirements, capacity, API, data model, components, failure analysis, trade-offs — and defend every choice under challenge.","weekList":[{"n":1,"title":"Requirements, capacity & the API","deliverable":"2 design write-ups + OpenAPI-first flagship.","selfcheck":"I can estimate QPS and storage for any system in under 5 minutes."},{"n":2,"title":"Data modelling & storage selection","deliverable":"2 design write-ups + search read model.","selfcheck":"I choose storage from access patterns, and can say so out loud."},{"n":3,"title":"Communication, caching & scaling patterns","deliverable":"2 design write-ups + gateway in front of the flagship.","selfcheck":"I can justify sync vs async for any given integration."},{"n":4,"title":"Security & multi-tenancy in design","deliverable":"2 design write-ups + threat model + 3 security fixes.","selfcheck":"I can run STRIDE over a diagram without a cheat sheet."},{"n":5,"title":"Trade-off articulation & extracting a service","deliverable":"**v4.5 tagged** + C4 diagrams + migration plan + `docs/adr/0008-service-extraction.md`.","selfcheck":"I can explain a technical trade-off in cost-and-risk language."},{"n":6,"title":"Design under constraints + consolidation","deliverable":"2 design write-ups + fitness functions in CI + a self-assessment note.","selfcheck":"I have 10 completed design write-ups I would show an interviewer."}],"exitChecklist":["10 timed system-design exercises completed and written up using the framework","Capacity estimation done from memory, without a calculator crutch","Flagship is OpenAPI-first with generated clients","Two contexts extracted via strangler fig with a parallel-run verification","C4 diagrams exist and are current","STRIDE threat model done; top findings fixed","Fitness functions running in CI","ADR-0008 written; v4.5 tagged"],"track":"backend"},{"id":"5A","name":"Banking Domain & Ledger Engineering","phase":5,"file":"PHASE-5/5A-ledger-engineering.md","weeks":7,"hours":126,"mStart":9.6,"mEnd":10.89,"flagship":"v5 — Real double-entry ledger","outcome":"I can build a double-entry ledger that is provably correct, immutable, auditable, and fast enough — and I can explain balance semantics to a product manager and to an auditor in their own language.","weekList":[{"n":1,"title":"The banking domain vocabulary","deliverable":"`docs/domain/banking-glossary.md` + ER map.","selfcheck":"I can explain nostro/vostro and suspense accounts unprompted."},{"n":2,"title":"Double-entry bookkeeping","deliverable":"immutable ledger + zero-sum property test + 4 worked journal entries.","selfcheck":"I can say which side a customer deposit lands on and why."},{"n":3,"title":"Balances: ledger, available, pending","deliverable":"three balance types + rebuild-and-verify job + hot-account benchmark.","selfcheck":"I can explain to a PM why the app shows two different balances."},{"n":4,"title":"Money, monetary precision & currency","deliverable":"`Money` type + allocation property test + FX with rate provenance.","selfcheck":"I can explain banker's rounding and when regulation requires it."},{"n":5,"title":"Transaction lifecycle, reversal & adjustment","deliverable":"state machine + reversal/adjustment + as-of-date balance query.","selfcheck":"I can explain reversal vs adjustment to a non-technical person."},{"n":6,"title":"Reconciliation","deliverable":"reconciliation module + break classification tests.","selfcheck":"I can design a matching strategy for a new external partner."},{"n":7,"title":"Audit, immutability & consolidation","deliverable":"**v5 tagged** + tamper-evidence verification + a regulator-ready","selfcheck":"I can produce a point-in-time balance proof on demand."}],"exitChecklist":["Ledger is append-only at the database-permission level, not just by convention","Trial balance sums to zero, proven by a property test over thousands of operations","Ledger / available / pending balances all implemented with a rebuild-and-verify job","`Money` type with allocation that provably loses no cents; FX carries rate provenance","Reversal and adjustment implemented; no mutation path exists","Reconciliation module classifies all break categories","Tamper-evident audit trail with a working verification job","Point-in-time balance report produced on demand; v5 tagged"],"track":"backend"},{"id":"5B","name":"Payments, Compliance & Risk","phase":5,"file":"PHASE-5/5B-payments-compliance.md","weeks":6,"hours":108,"mStart":10.89,"mEnd":12.0,"flagship":"v5.5 — Payments platform","outcome":"I can hold a design conversation with a payments product owner, a risk officer and a compliance officer without needing a translator — and design systems that satisfy all three.","weekList":[{"n":1,"title":"Payment rails & schemes","deliverable":"three rail adapters + finality/returns matrix + one parsed ISO 20022 message.","selfcheck":"I can explain authorisation vs clearing vs settlement for a card payment."},{"n":2,"title":"Payment orchestration & state","deliverable":"payment saga with UNKNOWN handling + lost-response test.","selfcheck":"I can explain the unknown-outcome problem and my resolution strategy."},{"n":3,"title":"Fees, limits & risk controls","deliverable":"versioned fee engine + race-proof limits engine + risk decision log.","selfcheck":"I can prove my limit check cannot be raced."},{"n":4,"title":"Compliance literacy: KYC, AML, sanctions","deliverable":"compliance module + a PII/CHD data-classification table + log audit.","selfcheck":"I can name three things PCI DSS forbids storing."},{"n":5,"title":"Data protection, residency & the audit conversation","deliverable":"crypto-shredding implementation + erasure-preserves-reconciliation test.","selfcheck":"I can explain crypto-shredding to a DPO and to an engineer."},{"n":6,"title":"Integration, resilience & consolidation","deliverable":"**v5.5 tagged** + partner integration + cut-off policy document.","selfcheck":"I can discuss a payments design with product, risk and compliance."}],"exitChecklist":["Three payment rails modelled with correct finality and returns semantics","Payment saga handles the UNKNOWN state with status enquiry and reconciliation resolution","Fee engine is versioned; limits engine is race-proof and tested as such","Compliance module: KYC gating, sanctions screening with review queue, monitoring rule","PII/CHD data classification done; logs audited and fixed","Crypto-shredding works without breaking ledger reconciliation","Partner integration with signed webhooks, batch files and cut-off-aware store-and-forward","v5.5 tagged"],"track":"backend"},{"id":"6A","name":"LLM Fundamentals & RAG","phase":6,"file":"PHASE-6/6A-llm-fundamentals-rag.md","weeks":7,"hours":126,"mStart":0.0,"mEnd":4.98,"flagship":"v6 — AI-assisted with a measured evaluation set","outcome":"I can build a retrieval-augmented feature whose quality I can **measure**, whose cost and latency I can predict, and whose failure modes I can name — rather than a demo that works on five hand-picked questions.","weekList":[{"n":1,"title":"LLM mechanics from a backend engineer's view","deliverable":"production-grade LLM client + latency/cost measurement report.","selfcheck":"I can state my cost per request and p99 latency as numbers."},{"n":2,"title":"Prompting, structured output & tool calling","deliverable":"structured extraction with a measured violation rate + injection test suite.","selfcheck":"I never parse free text where a schema would do."},{"n":3,"title":"Embeddings & vector search","deliverable":"pgvector search + recall measurement + `docs/adr/0009-vector-store.md`.","selfcheck":"I can explain the pre-filter vs post-filter trade-off."},{"n":4,"title":"Chunking, hybrid search & reranking","deliverable":"hybrid retrieval + reranker + ablation table with numbers.","selfcheck":"I can name a query type where vector search reliably loses."},{"n":5,"title":"Evaluation: making quality a number","deliverable":"golden dataset + eval harness + CI quality gate + judge calibration report.","selfcheck":"I can state my RAG's faithfulness and recall@5 as current numbers."},{"n":6,"title":"Grounding, citation & the full RAG architecture","deliverable":"**v6 tagged** + access-control test + citation verification.","selfcheck":"My retrieval is access-scoped and I have a test proving it."},{"n":7,"title":"When NOT to use an LLM + consolidation","deliverable":"`docs/ai/when-not-to-use-an-llm.md` + one feature de-LLM'd with data.","selfcheck":"I have removed an LLM from a feature and can justify it with numbers."}],"exitChecklist":["LLM client has timeouts, retries, circuit breaker, cost accounting and trace correlation","Structured output with schema validation; prompt-injection tests written","pgvector retrieval with measured recall against an exact baseline","Hybrid search + reranking with an ablation table of real numbers","Golden dataset + eval harness + CI quality gate; LLM judge calibrated against human labels","Access-scoped retrieval with a cross-tenant leakage test","Citations enforced and verified; explicit refusal path exists","At least one feature de-LLM'd with data justifying it; v6 tagged"],"track":"ai"},{"id":"6B","name":"AI Backend Architecture","phase":6,"file":"PHASE-6/6B-ai-backend-architecture.md","weeks":6,"hours":108,"mStart":5.54,"mEnd":8.86,"flagship":"v6.5 — AI platform","outcome":"I can design the *platform* layer that makes LLM features safe, affordable, observable and governable across many teams — not just one working feature.","weekList":[{"n":1,"title":"The AI Gateway","deliverable":"gateway module + `docs/adr/0010-ai-gateway.md`.","selfcheck":"I can explain what belongs in the gateway and what does not."},{"n":2,"title":"Model routing, cost control & caching","deliverable":"routing + semantic cache with measured false-hit rate + budget enforcement.","selfcheck":"I can state my cost per request and the effect of each optimisation."},{"n":3,"title":"Prompt management & context management","deliverable":"prompt registry + conversation store + token-budget policy.","selfcheck":"I can explain my token budget allocation and eviction order."},{"n":4,"title":"Guardrails & safety","deliverable":"guardrail pipeline + red-team report with bypasses and fixes.","selfcheck":"I can name the worst possible output and the specific control that stops it."},{"n":5,"title":"Observability & evaluation in production","deliverable":"AI observability dashboard + nightly canary eval + drift alert.","selfcheck":"I would detect a silent model change within 24 hours."},{"n":6,"title":"AI architecture patterns & consolidation","deliverable":"**v6.5 tagged** + `docs/ai/ai-platform-architecture.md` +","selfcheck":"I can present this platform to a non-AI-specialist executive."}],"exitChecklist":["AI gateway handling auth, quota, routing, streaming and cancellation","Model routing + semantic cache with a measured false-hit rate + enforced budgets","Versioned prompt registry gated by the 6A eval harness","Guardrail pipeline red-teamed, with bypasses documented and fixed","AI observability dashboard + nightly canary eval that catches an injected regression","AI layer sits as an adapter; the domain model contains no AI dependency","Decision-rights policy written","v6.5 tagged"],"track":"ai"},{"id":"7A","name":"AI Agents & the MCP / Tool Ecosystem","phase":7,"file":"PHASE-7/7A-agents-mcp.md","weeks":7,"hours":126,"mStart":9.42,"mEnd":13.29,"flagship":"v7 — Agentic operations layer","outcome":"I can answer the source document's important question with evidence: **when is an agent actually necessary, and when is a deterministic workflow better?** And I can build the one that is right, safely.","weekList":[{"n":1,"title":"Agents vs workflows: the decision","deliverable":"two implementations + a comparison table + `docs/ai/agent-vs-workflow.md`.","selfcheck":"I have a data-backed answer to \"should this be an agent?\""},{"n":2,"title":"Agent anatomy: planner, executor, memory, state","deliverable":"resumable agent with enforced ceilings + a crash-resume test.","selfcheck":"My agent cannot run away with cost or time, and I have tested it."},{"n":3,"title":"Model Context Protocol: concepts and a server","deliverable":"read-only MCP server + a transcript of a real client session.","selfcheck":"I can explain Tools vs Resources vs Prompts and when to use each."},{"n":4,"title":"Tool design, permissions & tool security","deliverable":"authorised write tools + injection red-team report + audit log.","selfcheck":"Every tool authorises against the end user, and I have proven it."},{"n":5,"title":"Human-in-the-loop & multi-agent systems","deliverable":"HITL approval queue + multi-agent comparison with measured catch rate.","selfcheck":"I know whether multi-agent helps *my* system, from data."},{"n":6,"title":"Agent evaluation & reliability","deliverable":"agent eval harness in CI + deterministic fallback path.","selfcheck":"I can state cost-per-successful-task for my agent."},{"n":7,"title":"MCP ecosystem, external integration & consolidation","deliverable":"**v7 tagged** + `docs/ai/mcp-adoption-policy.md` + risk assessment.","selfcheck":"I can explain MCP supply-chain risk to a security team."}],"exitChecklist":["Same task built as a workflow and as an agent, compared on real data; decision rule written","Agent state persisted and resumable; hard step/token/cost ceilings tested","MCP server exposing read and write tools with per-user authorisation","Tool layer red-teamed via injected content; escalations found and fixed","HITL approval queue working; multi-agent value measured (or rejected with data)","Agent eval harness in CI with deterministic replay; cost-per-success known","Deterministic fallback path exists and triggers correctly","MCP adoption policy written; v7 tagged"],"track":"ai"},{"id":"7B","name":"AI-Native SDLC & Engineering Judgment","phase":7,"file":"PHASE-7/7B-ai-native-sdlc.md","weeks":6,"hours":108,"mStart":1.11,"mEnd":14.4,"flagship":"v7.5 — AI-native repository","outcome":"I use AI across the entire software lifecycle in a way that measurably speeds me up, while retaining full ownership of every decision that matters — and I can show a team how to do the same without losing engineering rigour.","weekList":[{"n":1,"title":"Requirements & architecture with AI","deliverable":"a full analysis document + a written note on human-vs-AI contribution.","selfcheck":"I can name what AI structurally cannot know about my system."},{"n":2,"title":"API design, coding & the review discipline","deliverable":"conventions file + one AI-assisted feature + a defect-category tally.","selfcheck":"I state the design before AI writes non-trivial code."},{"n":3,"title":"Testing, refactoring & debugging with AI","deliverable":"mutation coverage improvement + refactor + a debugging log.","selfcheck":"I know which bug classes AI reliably misses in my codebase."},{"n":4,"title":"Code review, documentation & migration planning","deliverable":"AI review in CI with measured precision/recall + fact-checked docs.","selfcheck":"I know my AI reviewer's precision and have tuned it to be trusted."},{"n":5,"title":"Human responsibilities: the non-delegation constitution","deliverable":"human-responsibilities policy + a self-audit of violations.","selfcheck":"I can state exactly where my line is and why."},{"n":6,"title":"AI-native workflow at team scale + consolidation","deliverable":"**v7.5 tagged** + `docs/ai/ai-native-workflow.md` + an impact measurement.","selfcheck":"I could onboard a colleague into this workflow in one afternoon."}],"exitChecklist":["Conventions/rules file drives AI code generation across the repo","Defect-category tally exists for AI-generated code; I know its failure classes","Mutation coverage improved; one large refactor completed behind a test suite","AI review in CI with measured precision/recall, tuned below the ignore-threshold","Human-responsibilities policy written and self-audited against real work","Skill-atrophy counter-practice defined and started","Before/after impact measured on comparable features","v7.5 tagged"],"track":"ai"},{"id":"8A","name":"Architecture Design at Scale","phase":8,"file":"PHASE-8/8A-architecture-at-scale.md","weeks":7,"hours":126,"mStart":12.0,"mEnd":13.29,"flagship":"v8 — Load-tested, failure-tested, multi-region designed","outcome":"I can design and defend monolith, modular monolith, microservice, event-driven, data-intensive, high-throughput, high-availability and multi-region systems — choosing between them on evidence, not fashion.","weekList":[{"n":1,"title":"Architecture styles: the honest comparison","deliverable":"`docs/architecture/style-comparison.md` + distributed-monolith detectors.","selfcheck":"I can argue for and against microservices with equal competence."},{"n":2,"title":"High-throughput systems","deliverable":"10× throughput improvement with before/after data + a bottleneck analysis.","selfcheck":"I can explain why 90% utilisation is dangerous, with the queueing maths."},{"n":3,"title":"High-availability systems","deliverable":"zero-downtime deploy proof + measured RTO/RPO + availability calculation.","selfcheck":"I have restored a backup and know how long it took."},{"n":4,"title":"Data-intensive systems","deliverable":"CDC pipeline + event-time windowed aggregation + proven idempotent backfill.","selfcheck":"I can explain event time vs processing time with a concrete failure."},{"n":5,"title":"Multi-region & global systems","deliverable":"multi-region design doc + a simulated failover exercise.","selfcheck":"I can explain why active-active is dangerous for a ledger."},{"n":6,"title":"Chaos, load & failure testing","deliverable":"**v8 tagged** + `docs/reliability/chaos-report.md` with 8 experiments.","selfcheck":"I know my system's breaking point as a number."},{"n":7,"title":"Cost, sustainability & consolidation","deliverable":"cost model + one measured cost reduction + tech-debt register.","selfcheck":"I can state cost per transaction and its scaling behaviour."}],"exitChecklist":["Architecture style comparison scored against measured characteristics; both sides argued","10× throughput improvement achieved and explained; new bottleneck named","Zero-downtime deploys proven under load; RTO/RPO measured via a real restore","CDC + event-time streaming with a proven idempotent backfill","Multi-region design document with per-data-type consistency analysis and a failover exercise","8 chaos experiments with hypotheses; breaking point known as a number","Cost model built; one cost driver measurably reduced; tech-debt register quantified","v8 tagged"],"track":"backend"},{"id":"8B","name":"Architecture Decision-Making, Communication & Capstone","phase":8,"file":"PHASE-8/8B-decisions-capstone.md","weeks":6,"hours":108,"mStart":13.29,"mEnd":14.4,"flagship":"v8.final — Defended","outcome":"The North Star, demonstrated rather than claimed: *I can take an ambiguous business problem, model the domain, design a reliable system, implement it, validate it under realistic conditions, explain the trade-offs, and use AI to multiply my engineering productivity.*","weekList":[{"n":1,"title":"Architecture Decision Records as a habit","deliverable":"complete, indexed ADR set with at least one honest superseding ADR.","selfcheck":"Someone joining the project could understand its history from the ADRs."},{"n":2,"title":"Technical communication across audiences","deliverable":"four audience-specific artefacts + a self-reviewed recorded talk.","selfcheck":"I can explain my architecture to a CFO in three minutes."},{"n":3,"title":"Running an architecture review","deliverable":"review pre-read, findings log, action list, and three findings resolved.","selfcheck":"I have received hard architectural criticism and used it well."},{"n":4,"title":"The capstone: design from a blank page","deliverable":"a complete capstone design package + an AI-decision log.","selfcheck":"I designed a non-trivial system end-to-end without a template."},{"n":5,"title":"Capstone implementation & validation","deliverable":"working vertical slice + validation results + a revised design document.","selfcheck":"I let evidence change my design, and documented why."},{"n":6,"title":"Defence, portfolio & what comes next","deliverable":"**v8.final tagged** + portfolio + recorded walkthrough + next-24-month plan.","selfcheck":"I can defend every significant decision in this platform under challenge."}],"exitChecklist":["I can design production-grade backend systems (evidence: 10 design write-ups + capstone)","I can explain architectural trade-offs clearly (evidence: ADR set + recorded talk + review)","I can build reliable distributed systems with Java/Spring Boot (evidence: v8.final)","I reason deeply about PostgreSQL, Redis, Kafka, concurrency and JVM behaviour","I understand the fintech/core-banking domain (evidence: ledger, payments, compliance modules)","I can build AI-powered backend applications and agentic workflows (evidence: v6.5, v7)","I use AI across the SDLC without blindly trusting it (evidence: AI-decision log + policy)","I can communicate architecture at Senior/Architect level (evidence: portfolio + defence)"],"track":"backend"}],"phaseNames":{"1":"Engineering Foundation","2":"Data & Messaging","3":"Distributed Systems","4":"DDD & Architecture","5":"Fintech / Core Banking","6":"AI Application Engineering","7":"Agents & AI-Native Dev","8":"Solution Architecture"},"areas":["Java / JVM","Database","Distributed Systems","Messaging","Architecture","Domain Knowledge","AI Engineering","System Design","Communication"]};
+const SUBS = D.subs, PHN = D.phaseNames, AREAS = D.areas;
+const TOTW = SUBS.reduce((a,s)=>a+s.weeks,0);
+const TOTH = SUBS.reduce((a,s)=>a+s.hours,0);
+const TOTX = SUBS.reduce((a,s)=>a+s.exitChecklist.length,0);
+
+// ---- state (in-memory only; no browser storage is available in artifacts) ----
+let S = { weeks:{}, exits:{}, scores:{}, startDate:"" };
+const wk=(id,n)=>id+"#"+n, ex=(id,i)=>id+"!"+i;
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const md=s=>esc(s).replace(/`([^`]+)`/g,'<code>$1</code>')
+                  .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+                  .replace(/\*([^*]+)\*/g,'<em>$1</em>');
+const pct=(a,b)=>b?Math.round(a/b*100):0;
+
+function subDone(s){ return s.weekList.filter(w=>S.weeks[wk(s.id,w.n)]).length; }
+function subExits(s){ return s.exitChecklist.filter((_,i)=>S.exits[ex(s.id,i)]).length; }
+function gated(s){ return s.exitChecklist.length>0 && subExits(s)===s.exitChecklist.length; }
+function doneWeeks(){ return SUBS.reduce((a,s)=>a+subDone(s),0); }
+
+// ---------------- render: stats ----------------
+function renderStats(){
+  const dw=doneWeeks(), g=SUBS.filter(gated).length;
+  const dx=SUBS.reduce((a,s)=>a+subExits(s),0);
+  $('#heroNum').textContent = pct(dw,TOTW)+'%';
+  $('#heroLbl').innerHTML = dw+' of '+TOTW+' blocks (18h) &middot; '+(dw*18)+'h of '+TOTH+'h';
+  const FACT={backend:0.8, ai:2.4};
+  const curB = SUBS.filter(s=>s.track==='backend').find(s=>subDone(s)<s.weeks);
+  const curA = SUBS.filter(s=>s.track==='ai').find(s=>subDone(s)<s.weeks);
+  const est = (cur,tr)=>{ if(!cur){ const arr=SUBS.filter(x=>x.track===tr); return Math.max(...arr.map(x=>x.mEnd)); }
+    return cur.mStart + subDone(cur)*FACT[tr]/4.3333; };
+  const cur = curB || curA;
+  const curW = cur ? subDone(cur)+1 : null;
+  set('tWeeks', dw+' / '+TOTW, 'content blocks done');
+  set('tHours', (dw*18).toLocaleString(), 'of '+TOTH.toLocaleString()+' hours');
+  set('tGates', g+' / 17', 'exit gates passed');
+  set('tChecks', dx+' / '+TOTX, 'checklist items');
+  set('tNow', (curB?curB.id:'✓')+' · '+(curA?curA.id:'✓'), 'backend lane · AI lane');
+  set('tMonth', fmtM(Math.max(est(curB,'backend'),est(curA,'ai'))), 'calendar month of 14.4');
+}
+function trunc(s,n){ return s.length>n? s.slice(0,n-1)+'…' : s; }
+function fmtM(x){ return (Math.round(x*10)/10).toFixed(1); }
+function set(id,v,sub){ const e=$('#'+id); e.querySelector('.tileVal').textContent=v;
+  e.querySelector('.tileSub').textContent=sub; }
+
+// ---------------- render: timeline ----------------
+function renderTimeline(){
+  paintLane($('#tlBarB'), SUBS.filter(s=>s.track==='backend'));
+  paintLane($('#tlBarA'), SUBS.filter(s=>s.track==='ai'));
+}
+function paintLane(bar, subs){
+  bar.innerHTML='';
+  subs.forEach(s=>{
+    const p=pct(subDone(s),s.weeks);
+    const d=document.createElement('div');
+    d.className='tlSeg'; d.style.flex=s.hours;
+    d.title=s.id+' — '+s.name+'  ·  '+s.weeks+' blocks · cal months '+fmtM(s.mStart)+'–'+fmtM(s.mEnd)+'  ·  '+p+'% done';
+    d.innerHTML='<div class="base" style="background:var(--p'+s.phase+')"></div>'+
+      '<div class="prog" style="width:'+p+'%;background:var(--p'+s.phase+')"></div>'+
+      '<span>'+esc(s.id)+'</span>';
+    d.onclick=()=>{ const c=$('#sr-'+s.id); c.classList.add('open');
+      c.scrollIntoView({behavior:'smooth',block:'center'}); };
+    bar.appendChild(d);
+  });
+}
+
+// ---------------- render: cards ----------------
+function buildCards(){
+  const host=$('#list'); host.innerHTML='';
+  SUBS.forEach(s=>{
+    const c=document.createElement('div');
+    c.className='card sr'; c.id='sr-'+s.id;
+    c.dataset.phase=s.phase; c.dataset.text=(s.id+' '+s.name+' '+s.outcome+' '+
+      s.weekList.map(w=>w.title+' '+w.deliverable).join(' ')).toLowerCase();
+    c.innerHTML =
+      '<div class="srHead">'+
+        '<span class="chip" style="background:var(--p'+s.phase+')">'+esc(s.id)+'</span>'+
+        '<div><div class="srName">'+esc(s.name)+'</div>'+
+          '<div class="srMeta">'+(s.track==='ai'?'AI lane':'Backend lane')+' · Phase '+s.phase+' · '+esc(PHN[s.phase])+' &nbsp;·&nbsp; '+
+          s.weeks+' blocks · '+s.hours+'h · cal months '+fmtM(s.mStart)+'–'+fmtM(s.mEnd)+
+          ' &nbsp;·&nbsp; ships '+esc(s.flagship)+'</div></div>'+
+        '<div class="srRight">'+
+          '<div class="meter"><div class="mTrack"><div class="mFill" data-fill></div></div>'+
+          '<div class="mTxt" data-mtxt></div></div>'+
+          '<span class="gate" data-gate></span></div>'+
+      '</div>'+
+      '<div class="body">'+
+        '<div class="outcome">'+md(s.outcome)+'</div>'+
+        '<h3>Weeks — tick when the deliverable is done</h3>'+
+        s.weekList.map(w=>
+          '<div class="wk" data-wkrow="'+esc(wk(s.id,w.n))+'">'+
+          '<input type="checkbox" data-w="'+esc(wk(s.id,w.n))+'" aria-label="Week '+w.n+' complete">'+
+          '<div><div class="wkT">Week '+w.n+' — '+md(w.title)+'</div>'+
+          '<div class="wkD"><b>Deliverable:</b> '+md(w.deliverable)+'</div>'+
+          '<div class="wkD"><b>Self-check:</b> '+md(w.selfcheck)+'</div>'+'<div class="wkD"><a class="lsn" href="lessons/P'+s.phase+'/'+esc(s.id)+'-W'+w.n+'.html" target="_blank" rel="noopener">Open day-by-day lesson ↗</a></div>'+'</div></div>').join('')+
+        '<h3>Exit checklist — all must pass before the next sub-roadmap</h3>'+
+        s.exitChecklist.map((t,i)=>
+          '<div class="ck" data-ckrow="'+esc(ex(s.id,i))+'">'+
+          '<input type="checkbox" data-x="'+esc(ex(s.id,i))+'" id="cb-'+esc(ex(s.id,i))+'">'+
+          '<label for="cb-'+esc(ex(s.id,i))+'">'+md(t)+'</label></div>').join('')+
+        '<div class="gateNote">Source file: <code>'+esc(s.file)+'</code> · lesson folder: <a href="lessons/P'+s.phase+'/index.html" target="_blank" rel="noopener">lessons/P'+s.phase+'/</a>. '+
+        'If 2 or more checklist items fail, add a 1-week repair sprint rather than advancing.</div>'+
+      '</div>';
+    c.querySelector('.srHead').onclick=e=>{ if(e.target.tagName!=='INPUT') c.classList.toggle('open'); };
+    host.appendChild(c);
+  });
+  host.addEventListener('change',e=>{
+    const t=e.target;
+    if(t.dataset.w){ S.weeks[t.dataset.w]=t.checked; }
+    else if(t.dataset.x){ S.exits[t.dataset.x]=t.checked; }
+    else return;
+    syncAll();
+  });
+}
+function syncCards(){
+  SUBS.forEach(s=>{
+    const c=$('#sr-'+s.id), d=subDone(s), p=pct(d,s.weeks);
+    c.querySelector('[data-fill]').style.width=p+'%';
+    c.querySelector('[data-mtxt]').textContent=d+'/'+s.weeks+' blocks · '+p+'%';
+    const g=c.querySelector('[data-gate]'), xe=subExits(s), xt=s.exitChecklist.length;
+    if(gated(s)){ g.className='gate pass'; g.textContent='Gate passed'; }
+    else { g.className='gate'; g.textContent='Gate '+xe+'/'+xt; }
+    s.weekList.forEach(w=>{
+      const on=!!S.weeks[wk(s.id,w.n)];
+      const row=c.querySelector('[data-wkrow="'+wk(s.id,w.n)+'"]');
+      row.classList.toggle('done',on); row.querySelector('input').checked=on;
+    });
+    s.exitChecklist.forEach((_,i)=>{
+      const on=!!S.exits[ex(s.id,i)];
+      const row=c.querySelector('[data-ckrow="'+ex(s.id,i)+'"]');
+      row.classList.toggle('done',on); row.querySelector('input').checked=on;
+    });
+  });
+}
+
+// ---------------- scores: 9 small multiples (one series each) ----------------
+function renderScores(){
+  const host=$('#scGrid'); host.innerHTML='';
+  const months=Object.keys(S.scores).map(Number).sort((a,b)=>a-b);
+  AREAS.forEach((a,ai)=>{
+    const pts=months.map(m=>({m,v:S.scores[m][ai]})).filter(p=>p.v>0);
+    const d=document.createElement('div'); d.className='spark';
+    const last=pts.length?pts[pts.length-1].v:null;
+    d.innerHTML='<div class="spTop"><span class="spLbl">'+esc(a)+'</span>'+
+      (last!==null?'<span class="spVal">'+last+'<span style="color:var(--muted);font-size:11px;font-weight:400"> /5</span></span>'
+                  :'<span class="spNone">no score</span>')+'</div>'+spark(pts);
+    host.appendChild(d);
+  });
+  $('#scNote').textContent = months.length
+    ? 'Scored months: '+months.join(', ')+'. Each panel is one area over time — 1 to 5.'
+    : 'No scores yet. Enter your nine monthly scores above; each panel plots one area over time.';
+}
+function spark(pts){
+  const W=210,H=46,PL=18,PR=4,PT=6,PB=6;
+  const gx=(i,n)=>n<2?PL:PL+i*(W-PL-PR)/(n-1);
+  const gy=v=>PT+(5-v)/4*(H-PT-PB);
+  let g='';
+  [1,3,5].forEach(v=>{ g+='<line x1="16" y1="'+gy(v).toFixed(1)+'" x2="'+W+'" y2="'+gy(v).toFixed(1)+
+    '" stroke="var(--grid)" stroke-width="1"/>'; });
+  [5,1].forEach(v=>{ g+='<text x="11" y="'+(gy(v)+3.4).toFixed(1)+'" text-anchor="end" fill="var(--muted)" '+
+    'font-size="9" font-family="system-ui,sans-serif">'+v+'</text>'; });
+  if(!pts.length) return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" height="'+H+'" role="img" aria-label="no data">'+g+'</svg>';
+  const n=pts.length;
+  const dd=pts.map((p,i)=>(i?'L':'M')+gx(i,n).toFixed(1)+' '+gy(p.v).toFixed(1)).join(' ');
+  let m='';
+  if(n===1) m='<circle cx="'+gx(0,1).toFixed(1)+'" cy="'+gy(pts[0].v).toFixed(1)+
+    '" r="4" fill="var(--fill)" stroke="var(--surface-1)" stroke-width="2"/>';
+  else m='<circle cx="'+gx(n-1,n).toFixed(1)+'" cy="'+gy(pts[n-1].v).toFixed(1)+
+    '" r="4" fill="var(--fill)" stroke="var(--surface-1)" stroke-width="2"/>';
+  return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" height="'+H+'" role="img" aria-label="score trend, latest '+
+    pts[n-1].v+' of 5">'+g+
+    (n>1?'<path d="'+dd+'" fill="none" stroke="var(--fill)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>':'')+
+    m+'</svg>';
+}
+function buildEntry(){
+  const e=$('#entry');
+  e.innerHTML='<div class="fld"><span>Month (1–24)</span>'+
+    '<select id="scMonth">'+Array.from({length:24},(_,i)=>'<option value="'+(i+1)+'">M'+(i+1)+'</option>').join('')+'</select></div>'+
+    AREAS.map((a,i)=>'<div class="fld"><span>'+esc(a.split(' ')[0])+'</span>'+
+      '<input class="sInp" type="number" min="0" max="5" step="1" data-a="'+i+'" placeholder="–"></div>').join('')+
+    '<button class="btn" id="scSave">Save month</button>';
+  $('#scSave').onclick=()=>{
+    const m=+$('#scMonth').value;
+    const arr=AREAS.map((_,i)=>{ const v=+$('.sInp[data-a="'+i+'"]').value; return (v>=1&&v<=5)?v:0; });
+    if(arr.every(v=>!v)){ alert('Enter at least one score between 1 and 5.'); return; }
+    S.scores[m]=arr; renderScores();
+  };
+  $('#scMonth').onchange=()=>{
+    const cur=S.scores[+$('#scMonth').value];
+    AREAS.forEach((_,i)=>{ $('.sInp[data-a="'+i+'"]').value = cur&&cur[i]?cur[i]:''; });
+  };
+}
+
+// ---------------- table view ----------------
+function renderTable(){
+  const b=$('#tbl tbody'); b.innerHTML='';
+  SUBS.forEach(s=>{
+    const d=subDone(s);
+    b.insertAdjacentHTML('beforeend','<tr><td>'+esc(s.id)+'</td><td>'+esc(s.name)+'</td>'+
+      '<td class="n">'+s.phase+'</td><td class="n">'+s.weeks+'</td><td class="n">'+s.hours+'</td>'+
+      '<td class="n">'+fmtM(s.mStart)+'–'+fmtM(s.mEnd)+'</td><td class="nw2">'+esc(s.flagship)+'</td>'+
+      '<td class="n">'+d+'/'+s.weeks+'</td><td class="n">'+pct(d,s.weeks)+'%</td>'+
+      '<td class="n">'+subExits(s)+'/'+s.exitChecklist.length+'</td>'+
+      '<td>'+(gated(s)?'passed':'open')+'</td></tr>');
+  });
+  const dw=doneWeeks();
+  b.insertAdjacentHTML('beforeend','<tr style="font-weight:650"><td>Total</td><td>17 sub-roadmaps</td>'+
+    '<td class="n">8</td><td class="n">'+TOTW+'</td><td class="n">'+TOTH+'</td><td class="n nw">0–14.4</td>'+
+    '<td>v0 → v8.final</td><td class="n">'+dw+'/'+TOTW+'</td><td class="n">'+pct(dw,TOTW)+'%</td>'+
+    '<td class="n">'+SUBS.reduce((a,s)=>a+subExits(s),0)+'/'+TOTX+'</td>'+
+    '<td>'+SUBS.filter(gated).length+'/17</td></tr>');
+}
+
+// ---------------- filters ----------------
+function applyFilters(){
+  const q=$('#q').value.trim().toLowerCase();
+  const ph=$('#fPhase').value, st=$('#fState').value;
+  SUBS.forEach(s=>{
+    const c=$('#sr-'+s.id), d=subDone(s);
+    let ok=true;
+    if(q && !c.dataset.text.includes(q)) ok=false;
+    if(ph!=='all' && String(s.phase)!==ph) ok=false;
+    if(st==='todo' && d!==0) ok=false;
+    if(st==='wip' && !(d>0 && d<s.weeks)) ok=false;
+    if(st==='done' && d!==s.weeks) ok=false;
+    if(st==='gated' && !gated(s)) ok=false;
+    c.style.display= ok?'':'none';
+  });
+}
+
+// ---------------- export / import ----------------
+function doExport(){
+  $('#io').classList.add('open');
+  $('#ioTxt').value=JSON.stringify({v:1,savedAt:new Date().toISOString(),state:S},null,1);
+  $('#ioTxt').select();
+}
+function doImport(){
+  try{
+    const o=JSON.parse($('#ioTxt').value);
+    const st=o.state||o;
+    S={weeks:st.weeks||{},exits:st.exits||{},scores:st.scores||{},startDate:st.startDate||''};
+    $('#start').value=S.startDate; syncAll(); renderScores();
+    alert('Progress restored.');
+  }catch(err){ alert('Could not parse that JSON: '+err.message); }
+}
+
+function syncAll(){ renderStats(); renderTimeline(); syncCards(); renderTable(); }
+
+// ---------------- init ----------------
+buildCards(); buildEntry();
+$('#tlAxisR').textContent='week 62.4 · month 14.4 · '+TOTH.toLocaleString()+'h';
+$('#legend').innerHTML=Object.entries(PHN).map(([k,v])=>
+  '<span><i style="background:var(--p'+k+')"></i>P'+k+' '+esc(v)+'</span>').join('');
+$('#q').oninput=applyFilters; $('#fPhase').onchange=applyFilters; $('#fState').onchange=applyFilters;
+$('#start').onchange=e=>{ S.startDate=e.target.value; renderStats(); };
+$('#btnExport').onclick=doExport;
+$('#btnImport').onclick=()=>{ $('#io').classList.add('open'); $('#ioTxt').focus(); };
+$('#ioDo').onclick=doImport;
+$('#ioClose').onclick=()=>$('#io').classList.remove('open');
+$('#btnTable').onclick=()=>{ const s=$('#tableSec'); const on=s.style.display==='none';
+  s.style.display=on?'':'none'; $('#btnTable').classList.toggle('on',on); };
+$('#btnAll').onclick=()=>{ const any=$$('.sr').some(c=>!c.classList.contains('open'));
+  $$('.sr').forEach(c=>c.classList.toggle('open',any)); $('#btnAll').textContent=any?'Collapse all':'Expand all'; };
+$('#theme').onclick=()=>{ const r=document.documentElement;
+  const dark=getComputedStyle(r).getPropertyValue('--plane').trim()==='#0d0d0d';
+  r.dataset.theme=dark?'light':'dark'; };
+syncAll(); renderScores();
+</script>
+</body>
+</html>

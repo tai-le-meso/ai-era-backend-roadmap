@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5B-W1 Day 2 — Learn II → Design</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5B-W1.html">5B-W1 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5B-W1 · Day 2</span>
+<h1>Learn II → Design — Payment rails &amp; schemes</h1>
+<div class="meta">Payments, Compliance &amp; Risk · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><a href="day1.html">Day 1</a><span class="cur">Day 2 — Learn II → Design</span><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../5B-W1.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Correspondent banking and nostro/vostro in practice</b><span>Cross-border payments hop through correspondent banks: each hop is a debit/credit across a nostro/vostro pair, fees may be deducted en route, and Swift messages instruct while the correspondents&#x27; books settle. Your 5A-W1 nostro vocabulary becomes operational: an international transfer is a chain of bilateral ledger updates, each with its own timing.</span></div><div class="pt"><b>ISO 20022 message anatomy</b><span>Every message = Business Application Header + Document. pain.001 = customer→bank payment initiation; pacs.008 = bank→bank customer credit transfer (the interbank workhorse); pacs.002 = payment status report; camt.053/052 = statements/reports; camt.056 = cancellation request. Inside pacs.008: GrpHdr (MsgId, SttlmInf), then CdtTrfTxInf blocks with Dbtr/DbtrAgt/CdtrAgt/Cdtr, IntrBkSttlmAmt, and end-to-end references (EndToEndId, UETR) — the references that make W6-style recon possible.</span></div><div class="pt"><b>MT→ISO 20022 migration and PSD2/Open Banking</b><span>Swift&#x27;s CBPR+ moved cross-border messaging from MT (MT103) to ISO 20022 (pacs) with structured, richer data (structured-address mandates land Nov 2026) — a live migration you may work on. PSD2 opened bank access (AIS/PIS) via APIs; the UK Open Banking spec from 5A-W1 is its concrete form.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>On iso20022.org, download the pacs.008 message definition report and XSD; read GrpHdr and one CdtTrfTxInf end-to-end.</li><li>Map pacs.008 fields to your domain: Dbtr→?, EndToEndId→your reference, IntrBkSttlmAmt→Money; write the mapping table.</li><li>Draw a two-correspondent cross-border payment as journal entries across four banks&#x27; books (use the 5A-W2 nostro entry pattern).</li><li>Design the PaymentRail port: submit(payment) → RailReceipt, plus rail-specific finality metadata, status callback, and return ingestion; sketch the three adapters (card-like, batch, instant/RTGS).</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>One port, three adapters works because rails differ in timing/finality/returns — exactly what the port&#x27;s metadata must expose, not hide.</li><li>ISO 20022&#x27;s end-to-end references (EndToEndId, UETR) are the connective tissue between payments, statements, and reconciliation.</li><li>A cross-border payment is not one movement but a chain of bilateral nostro updates — explains both the delay and the deducted fees.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">pain = initiation, pacs = interbank execution, pacs.002 = status, camt = statements/cash mgmt → apply: parser and adapter naming today and in W2.</div><div class="rem">EndToEndId/UETR travel unchanged across the chain → apply: propagate into your ledger references for recon.</div><div class="rem">MT103 ≈ pacs.008 across the migration; structured data is the point → apply: talking point + mapping if your employer runs the migration.</div><div class="rem">Rail port exposes finality semantics as data (finality moment, return window) → apply: day-3 implementation.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://www.iso20022.org/iso-20022-message-definitions" target="_blank" rel="noopener">ISO 20022 Message Definitions (pain/pacs/camt)</a><span class="badge v">verified</span><span class="n">Day 2–3: download the pacs.008 (FIToFICustomerCreditTransfer) definition and XSD — the message you will parse on day 3; also locate pain.001 and camt.053 to fix the family roles.</span></div><div class="res"><a href="https://www.europeanpaymentscouncil.eu/what-we-do/sepa-credit-transfer" target="_blank" rel="noopener">EPC — SEPA Credit Transfer scheme</a><span class="badge v">verified</span><span class="n">Day 1: SCT mechanics and links to the rulebook — batch clearing, R-transactions, scheme governance for euro credit transfers.</span></div><div class="res"><a href="https://www.europeanpaymentscouncil.eu/what-we-do/sepa-instant-credit-transfer" target="_blank" rel="noopener">EPC — SEPA Instant Credit Transfer scheme</a><span class="badge v">verified</span><span class="n">Day 1: SCT Inst — sub-10-second execution, 24/7/365, and the Instant Payments Regulation (EU 2024/886) context; contrast with batch SCT for the finality matrix.</span></div><div class="res"><a href="https://achdevguide.nacha.org/" target="_blank" rel="noopener">Nacha ACH Guide for Developers</a><span class="badge v">verified</span><span class="n">Day 1: US ACH batch mechanics, file structure, and returns — the R-transaction analogue; use for the returns column of the finality matrix.</span></div><div class="res"><a href="https://www.federalreserve.gov/paymentsystems/fedfunds_about.htm" target="_blank" rel="noopener">Federal Reserve — Fedwire Funds Service</a><span class="badge v">verified</span><span class="n">Day 1: RTGS defined by its operator — &#x27;immediate, final, and irrevocable once processed&#x27;; the wire column of your matrix.</span></div><div class="res"><a href="https://www.ecb.europa.eu/paym/target/t2/html/index.en.html" target="_blank" rel="noopener">ECB — T2 (Eurosystem RTGS)</a><span class="badge v">verified</span><span class="n">Day 1: the euro RTGS counterpart, settlement in central bank money; skim for the settlement-finality concept.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5B-W4 Day 2 — Learn II → Design</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5B-W4.html">5B-W4 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5B-W4 · Day 2</span>
+<h1>Learn II → Design — Compliance literacy: KYC, AML, sanctions</h1>
+<div class="meta">Payments, Compliance &amp; Risk · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><a href="day1.html">Day 1</a><span class="cur">Day 2 — Learn II → Design</span><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../5B-W4.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Sanctions screening mechanics</b><span>Lists (OFAC SDN, UN, EU consolidated) contain names with aliases, weak AKAs, partial DOBs and transliteration variants — exact matching misses real hits, so screening is fuzzy (normalisation, phonetics, edit distance, token reordering for name-order differences) and therefore produces false positives BY DESIGN. Screen at onboarding, on list updates (re-screen the book), and per-transaction for payment parties. Blocking (freeze the asset — OFAC-style) vs rejecting (refuse and return) are different obligations with different ledger outcomes — blocked funds sit in a dedicated blocked-funds account, not limbo.</span></div><div class="pt"><b>PCI DSS at design level</b><span>Scope = every system that stores, processes or transmits cardholder data (CHD) — the cardholder data environment (CDE). Never storable, even encrypted, after authorisation: full track data, CVV2/CVC2, PIN/PIN block (sensitive authentication data). PAN storable only rendered unreadable (strong crypto/truncation/hashing). Tokenisation swaps PAN for a token so most systems never touch CHD — the single best scope-reduction move: scope drives audit cost, so &#x27;keep card data out of our systems entirely&#x27; is an architecture goal.</span></div><div class="pt"><b>Basel and ISO 20022 as compliance substrate</b><span>Basel sets capital/liquidity/risk standards — you won&#x27;t implement them, but they explain why data quality, lineage (BCBS 239) and reporting infrastructure get funded. ISO 20022&#x27;s structured fields (LEIs, structured names/addresses, purpose codes) make screening and regulatory reporting tractable — structured data is itself a compliance feature.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Browse real SDN entries; collect 5 examples of aliases/weak AKAs/transliteration that would defeat exact matching.</li><li>Download PCI DSS v4.x from the PCI SSC library; read Requirement 3 and write the never-store list plus the PAN-rendering options in your own words.</li><li>Design the screening port: normalise → candidate-generate → score → threshold into hit/review/clear, with a false-positive review queue and full decision logging (list version screened against!).</li><li>Design tokenisation for the flagship&#x27;s card-like data: token vault boundary, what leaves the CDE, what your logs may contain.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Sanctions screening trades false positives for false negatives deliberately — a screening system without a review queue is either missing hits or drowning ops.</li><li>CVV is never storable after authorisation, full stop — &#x27;encrypted&#x27; does not rescue it; this is the most cited PCI failure.</li><li>Recording the list version each screen ran against is what makes &#x27;we screened them&#x27; provable later.</li><li>Structured data (ISO 20022) quietly does compliance work: better screening input, better reporting output.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Never store post-auth: CVV/CVC, full track data, PIN blocks — encryption doesn&#x27;t make it legal → apply: day-3 tokenisation + day-4 log audit; the week&#x27;s check question.</div><div class="rem">Tokenisation shrinks PCI scope; scope = audit surface = cost → apply: architecture decision record for the flagship.</div><div class="rem">Screen at onboarding + on list updates + per transaction; log list version per decision → apply: screening port implementation.</div><div class="rem">Blocking freezes funds (dedicated ledger account); rejecting returns them → apply: ledger entries for screening outcomes.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://www.fatf-gafi.org/en/topics/fatf-recommendations.html" target="_blank" rel="noopener">FATF Recommendations</a><span class="badge v">verified</span><span class="n">Day 1: the global AML/CFT standard — skim the 40 Recommendations&#x27; categories and read the customer-due-diligence and reporting ones for what they demand of systems (records, monitoring, reporting).</span></div><div class="res"><a href="https://bsaaml.ffiec.gov/manual" target="_blank" rel="noopener">FFIEC BSA/AML Examination Manual</a><span class="badge v">verified</span><span class="n">Day 2: how examiners actually test AML programs — read the transaction-monitoring and suspicious-activity sections to see what your monitoring module must evidence.</span></div><div class="res"><a href="https://sanctionslist.ofac.treas.gov/Home/SdnList" target="_blank" rel="noopener">OFAC SDN List (Sanctions List Service)</a><span class="badge v">verified</span><span class="n">Day 2: the primary US sanctions list your screening port would consume — look at real entries (aliases, weak AKAs) to understand why fuzzy matching and false positives are inherent.</span></div><div class="res"><a href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener">PCI Security Standards Council — Document Library (PCI DSS)</a><span class="badge v">verified</span><span class="n">Day 2: download PCI DSS v4.x and read Requirement 3 (protect stored account data) — the storage prohibitions (SAD/CVV/track data) and tokenisation context. Day 4: verify AI claims against it.</span></div><div class="res"><a href="https://www.bis.org/basel_framework/" target="_blank" rel="noopener">BIS — Basel Framework</a><span class="badge v">verified</span><span class="n">Day 2: skim the framework structure for literacy — capital/liquidity standards as the reason banks obsess over data quality and reporting (with BCBS 239 from 5A-W7).</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

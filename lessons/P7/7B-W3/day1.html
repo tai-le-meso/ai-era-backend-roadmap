@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>7B-W3 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 7 lessons</a> · <a href="../7B-W3.html">7B-W3 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p7)">7B-W3 · Day 1</span>
+<h1>Learn I — Testing, refactoring &amp; debugging with AI</h1>
+<div class="meta">AI-Native SDLC &amp; Engineering Judgment · Phase 7 — Agents & AI-Native Dev · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../7B-W3.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p7)"></i>What I learn</div><div class="pt"><b>AI for test generation, and the trap</b><span>Models generate tests quickly and will happily assert the code&#x27;s <em>current</em> behaviour — including its bugs. A generated test suite that passes immediately against buggy code has locked the bug in. Every generated test needs review against the specification, not against the implementation.</span></div><div class="pt"><b>Mutation testing as the gap finder</b><span>PIT mutates your code (flips conditionals, changes return values) and checks whether tests fail. Surviving mutants are code paths your tests do not actually verify. It is a far better coverage signal than line coverage, which measures execution rather than assertion.</span></div><div class="pt"><b>Property-based test generation</b><span>Models are good at proposing properties: &#x27;allocating N ways preserves the total&#x27;, &#x27;reversal then re-application is identity&#x27;. Properties catch classes of bug that examples miss, and generating candidate properties is a genuine AI strength.</span></div><div class="pt"><b>AI for refactoring, behind tests</b><span>Large mechanical refactors — renaming across modules, extracting an abstraction, migrating an API version — are well suited to AI <em>if</em> a test suite guards the behaviour. Without the suite, you are making unverified changes at speed, which is worse than making them slowly.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Run mutation testing on the flagship and find the surviving mutants.</li><li>Use AI to generate tests targeting the survivors — then review each against the spec, not the code.</li><li>Generate candidate properties for the <code>Money</code> and ledger types with jqwik.</li><li>Count how many generated tests asserted current (possibly wrong) behaviour.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>A generated test that passes on first run against untested code deserves suspicion, not celebration.</li><li>Mutation coverage measures whether tests assert; line coverage only measures whether they execute.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Generated tests may assert existing bugs → apply: review against the spec, never against the implementation.</div><div class="rem">Surviving mutants = unverified paths → apply: better target than line-coverage percentage.</div><div class="rem">AI is good at proposing properties → apply: use it for property-based test candidates.</div><div class="rem">Never refactor with AI without a test suite → apply: speed without verification is the worst combination.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://pitest.org/" target="_blank" rel="noopener">PIT Mutation Testing</a><span class="badge">official</span><span class="n">Mutation coverage — the metric that finds tests asserting nothing. Day 1.</span></div><div class="res"><a href="https://docs.spring.io/spring-boot/index.html" target="_blank" rel="noopener">Spring Boot reference</a><span class="badge v">verified</span><span class="n">Testing slices — the shape your generated tests must follow. Day 1.</span></div><div class="res"><a href="https://platform.claude.com/docs/en/intro" target="_blank" rel="noopener">Claude Platform documentation</a><span class="badge v">verified</span><span class="n">Prompting for test generation and debugging assistance. Day 1–2.</span></div><div class="res"><a href="https://jqwik.net/" target="_blank" rel="noopener">jqwik property-based testing</a><span class="badge">official</span><span class="n">Property-based tests — a good target for AI generation. Day 2.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

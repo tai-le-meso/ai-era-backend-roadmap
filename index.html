@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI-Era Backend Engineer Roadmap</title><meta name="description" content="A 416-lesson, 1,872-hour self-directed curriculum taking a mid-level backend engineer to senior/architect level — Java, JVM, PostgreSQL, Kafka, distributed systems, DDD, fintech, and AI engineering — with an interactive progress tracker."><meta property="og:title" content="AI-Era Backend Engineer Roadmap"><meta property="og:description" content="416 daily lessons across 8 phases. Backend depth and AI engineering in parallel, finishing together in ~14.5 months."><meta property="og:type" content="website"><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.hero{padding:34px 0 26px;border-bottom:1px solid var(--grid);margin-bottom:26px}
+.hero h1{font-size:30px;letter-spacing:-.02em;margin:0 0 8px}
+.hero p{font-size:15px;color:var(--ink2);margin:0 0 4px;max-width:64ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:22px 0 0}
+.kpi{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:22px;font-weight:650;letter-spacing:-.01em}
+.kpi span{font-size:11.5px;color:var(--mut)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.cta a{display:inline-block;padding:9px 16px;border-radius:9px;font-size:13.5px;font-weight:550;
+text-decoration:none;border:1px solid var(--ring);background:var(--s);color:var(--ink)}
+.cta a.p{background:var(--fill);border-color:var(--fill);color:#fff}
+.cta a:hover{border-color:var(--fill)}
+h2.sec{font-size:12.5px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;
+color:var(--ink2);margin:30px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pc{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:14px 16px;
+text-decoration:none;color:inherit;display:block;border-left-width:3px}
+.pc:hover{border-color:var(--fill);text-decoration:none}
+.pc b{display:block;font-size:14.5px;font-weight:600;margin-bottom:3px}
+.pc span{font-size:12px;color:var(--ink2);display:block}
+.pc em{font-size:11.5px;color:var(--mut);font-style:normal;display:block;margin-top:6px}
+.lane{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.lane>div{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:14px 16px}
+.lane h3{font-size:13.5px;margin:0 0 6px;font-weight:600}
+.lane p{font-size:12.5px;color:var(--ink2);margin:0}
+table.t{width:100%;border-collapse:collapse;font-size:13px;background:var(--s);
+border:1px solid var(--ring);border-radius:10px;overflow:hidden}
+table.t th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;
+color:var(--ink2);padding:9px 12px;border-bottom:1px solid var(--grid);font-weight:600}
+table.t td{padding:9px 12px;border-bottom:1px solid var(--grid);vertical-align:top}
+table.t tr:last-child td{border-bottom:0}
+ul.f{margin:6px 0;padding-left:20px;font-size:13.5px}ul.f li{margin:5px 0}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--grid);
+color:var(--mut);font-size:12px;line-height:1.7}
+@media (max-width:640px){.lane{grid-template-columns:1fr}.hero h1{font-size:24px}}
+</style></head><body><div class="wrap">
+<div class="hero">
+<h1>AI-Era Backend Engineer Roadmap</h1>
+<p>A complete, self-directed curriculum taking a mid-level backend engineer to senior / solution-architect
+level — Java &amp; the JVM, PostgreSQL, Kafka, distributed systems, domain-driven design, core-banking
+domain, and AI application engineering.</p>
+<p>Every one of the 104 study blocks is broken into four day-by-day lessons with cited official sources,
+and the whole thing is tracked in an interactive dashboard.</p>
+<div class="kpis">
+<div class="kpi"><b>416</b><span>daily lessons</span></div>
+<div class="kpi"><b>104</b><span>study blocks</span></div>
+<div class="kpi"><b>1,872</b><span>hours of work</span></div>
+<div class="kpi"><b>~14.5</b><span>months at 30h/wk</span></div>
+<div class="kpi"><b>426</b><span>cited sources</span></div>
+</div>
+<div class="cta">
+<a class="p" href="roadmap-tracker.html">Open the progress tracker →</a>
+<a href="lessons/P1/index.html">Start at Phase 1</a>
+<a href="https://github.com/">View on GitHub</a>
+</div>
+</div>
+
+<h2 class="sec">How it runs — two parallel lanes</h2>
+<div class="lane">
+<div><h3>Backend lane · 22.5h/week</h3><p>Phases 1–5 and 8, in sequence. Java and the JVM, PostgreSQL,
+Redis, Kafka, reliability and observability, DDD and architecture, the banking domain, then architecture
+at scale. Twelve sub-roadmaps, 1,404 hours.</p></div>
+<div><h3>AI lane · 7.5h/week</h3><p>Phases 6–7, interleaved from week one so AI is never learned last.
+Each block is scheduled after its backend prerequisite — vector search alongside PostgreSQL, the AI
+gateway alongside circuit breakers, agents after sagas. Four sub-roadmaps, 468 hours.</p></div>
+</div>
+<p class="note" style="margin-top:12px">The content ratio is exactly 3:1, so both lanes finish together
+at week 62.4 — about month 14.4. Nothing is cut.</p>
+
+<h2 class="sec">The eight phases</h2>
+<div class="grid"><a class="pc" style="border-left-color:var(--p1)" href="lessons/P1/index.html"><b>Phase 1 — Engineering Foundation</b><span>1A · 1B · 13 blocks · 234h · Backend lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p2)" href="lessons/P2/index.html"><b>Phase 2 — Data &amp; Messaging</b><span>2A · 2B · 2C · 13 blocks · 234h · Backend lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p3)" href="lessons/P3/index.html"><b>Phase 3 — Distributed Systems</b><span>3A · 3B · 13 blocks · 234h · Backend lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p4)" href="lessons/P4/index.html"><b>Phase 4 — DDD &amp; Architecture</b><span>4A · 4B · 13 blocks · 234h · Backend lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p5)" href="lessons/P5/index.html"><b>Phase 5 — Fintech / Core Banking</b><span>5A · 5B · 13 blocks · 234h · Backend lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p6)" href="lessons/P6/index.html"><b>Phase 6 — AI Application Engineering</b><span>6A · 6B · 13 blocks · 234h · AI lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p7)" href="lessons/P7/index.html"><b>Phase 7 — Agents &amp; AI-Native Dev</b><span>7A · 7B · 13 blocks · 234h · AI lane</span><em>52 daily lessons</em></a><a class="pc" style="border-left-color:var(--p8)" href="lessons/P8/index.html"><b>Phase 8 — Solution Architecture</b><span>8A · 8B · 13 blocks · 234h · Backend lane</span><em>52 daily lessons</em></a></div>
+
+<h2 class="sec">What a daily lesson contains</h2>
+<table class="t">
+<tr><th style="width:30%">Section</th><th>What it gives you</th></tr>
+<tr><td><b>What I learn</b></td><td>3–6 specific technical points with real detail — not summaries.
+Why <code>HashMap</code> treeifies a bin at 8 entries, what <code>acks=all</code> with
+<code>min.insync.replicas=1</code> actually guarantees, how LLM-judge verbosity bias skews evaluation.</td></tr>
+<tr><td><b>What I do</b></td><td>3–5 concrete actions for the session — read this spec section, reproduce
+this failure, measure this, write this test.</td></tr>
+<tr><td><b>What I conclude</b></td><td>The trade-offs and judgment calls the day's work should leave you with.</td></tr>
+<tr><td><b>What I remember &amp; apply</b></td><td>Flashcard-style facts, each ending in an
+<code>→ apply:</code> pointer telling you where to use it in real work.</td></tr>
+<tr><td><b>Sources</b></td><td>4–6 official references per week, badged <b>verified</b> where the URL was
+confirmed reachable when the pack was built.</td></tr>
+</table>
+
+<h2 class="sec">Using it</h2>
+<ul class="f">
+<li>Open the <a href="roadmap-tracker.html">tracker</a>, set a start date, and expand the sub-roadmap
+you are on. Every week row links to its four daily lessons.</li>
+<li>Tick blocks and exit-checklist items as you go. Progress lives in the browser tab only — use
+<b>Export</b> to save a JSON snapshot and <b>Import</b> to restore it.</li>
+<li>Read <a href="00-PLAN-14MO-PARALLEL.md">the parallel plan</a> for the schedule and the weekly rhythm,
+and <a href="00-OVERVIEW.md">the overview</a> for the original 24-month framing.</li>
+<li>Every sub-roadmap has an exit checklist. Do not advance with more than two items failing.</li>
+</ul>
+
+<footer>
+Built around one flagship project — a mini core-banking / payment platform that evolves from
+<code>v0</code> to <code>v8.final</code> across the whole roadmap.<br>
+Lesson content is AI-assisted and human-reviewed; source URLs marked <b>verified</b> were checked at
+build time, the rest are stable official roots. Verify anything before relying on it professionally.
+</footer>
+</div></body></html>

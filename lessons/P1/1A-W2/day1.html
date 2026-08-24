@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1A-W2 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 1 lessons</a> · <a href="../1A-W2.html">1A-W2 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p1)">1A-W2 · Day 1</span>
+<h1>Learn I — Collections, deeply</h1>
+<div class="meta">Modern Java Mastery · Phase 1 — Engineering Foundation · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../1A-W2.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p1)"></i>What I learn</div><div class="pt"><b>ArrayList vs LinkedList in reality</b><span><code>ArrayList</code> is a contiguous array — random access is O(1) and iteration is cache-friendly. <code>LinkedList</code> is O(1) insert <em>given a node</em>, but you almost never have the node, and every element is a separate heap object with two extra pointers. In practice <code>ArrayList</code> wins nearly always, including for queue-like use where <code>ArrayDeque</code> beats both.</span></div><div class="pt"><b>HashMap internals</b><span>Buckets are an array of size 2^n. A key&#x27;s <code>hashCode</code> is spread (XOR with high bits) then masked. Collisions form a linked list, and at 8 entries in one bin with table size ≥64 the bin becomes a red-black tree; it untreeifies at 6. Resize doubles capacity at <code>size &gt; capacity * loadFactor</code> (0.75) and rehashes everything.</span></div><div class="pt"><b>Iteration-order guarantees</b><span><code>HashMap</code> guarantees nothing and its order can change on resize. <code>LinkedHashMap</code> guarantees insertion order — or access order if constructed with <code>accessOrder=true</code>, which is how you build an LRU. <code>TreeMap</code> guarantees comparator order.</span></div><div class="pt"><b>Views vs copies</b><span><code>Collections.unmodifiableList(x)</code> is a <em>view</em> — mutating <code>x</code> mutates what the caller sees. <code>List.of(...)</code> and <code>List.copyOf(x)</code> are genuinely immutable copies. Confusing the two is a real defect, not a style point.</span></div><div class="pt"><b>Fail-fast iteration</b><span><code>modCount</code> is bumped on structural modification; iterators check it and throw <code>ConcurrentModificationException</code>. It is a best-effort bug detector, not a thread-safety mechanism.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Read the <code>HashMap</code> class javadoc end to end — it is one of the best-written docs in the JDK.</li><li>In <code>jshell</code>, build a <code>HashMap</code> with deliberately colliding keys (same <code>hashCode</code>, different <code>equals</code>) and observe lookup degradation.</li><li>Prove the view-vs-copy difference: wrap a list with <code>unmodifiableList</code>, mutate the original, print the wrapper.</li><li>Write your own one-paragraph explanation of resize before reading anyone else&#x27;s.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Choosing a collection is choosing an access pattern; the complexity table matters less than cache behaviour at realistic sizes.</li><li><code>unmodifiable*</code> communicates intent to the caller but protects nothing if the source escapes.</li><li>Treeification is a defence against hash-collision DoS as much as a performance feature.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">HashMap treeifies a bin at 8 entries when the table is ≥64, untreeifies at 6 → apply: a hot map with a poor <code>hashCode</code> degrades to O(log n), not O(1) — check the hash before blaming the map.</div><div class="rem">Default load factor is 0.75 → apply: pre-size maps you build in a loop with <code>new HashMap&lt;&gt;(expected/0.75f + 1)</code> to avoid repeated rehash.</div><div class="rem"><code>List.of</code> is an immutable copy; <code>unmodifiableList</code> is a view → apply: return <code>List.copyOf</code> from getters that expose internal state.</div><div class="rem"><code>ArrayDeque</code> beats <code>Stack</code> and <code>LinkedList</code> for both stack and queue use → apply: replace any <code>Stack</code> you find in the codebase.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/package-summary.html" target="_blank" rel="noopener">Java SE 25 API — java.util package summary</a><span class="badge">official</span><span class="n">Read the Collections framework overview + implementation notes. Day 1.</span></div><div class="res"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HashMap.html" target="_blank" rel="noopener">Java SE 25 API — HashMap</a><span class="badge">official</span><span class="n">The class javadoc documents load factor, treeification and iteration-order caveats. Day 1.</span></div><div class="res"><a href="https://dev.java/learn/" target="_blank" rel="noopener">Dev.java — Collections</a><span class="badge v">verified</span><span class="n">The Collections tutorial track. Day 1–2.</span></div><div class="res"><a href="https://github.com/openjdk/jmh" target="_blank" rel="noopener">JMH</a><span class="badge v">verified</span><span class="n">Skim the README now; you will use it properly in 1B-W6. Day 3 measurement.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

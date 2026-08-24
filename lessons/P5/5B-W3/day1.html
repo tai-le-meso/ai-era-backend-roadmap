@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5B-W3 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 5 lessons</a> · <a href="../5B-W3.html">5B-W3 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p5)">5B-W3 · Day 1</span>
+<h1>Learn I — Fees, limits &amp; risk controls</h1>
+<div class="meta">Payments, Compliance &amp; Risk · Phase 5 — Fintech / Core Banking · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../5B-W3.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p5)"></i>What I learn</div><div class="pt"><b>Fee models and timing</b><span>Fixed, percentage, tiered (marginal vs slab — specify which!), and blended models; charged upfront, on settlement, or aggregated monthly. Wire fees carry OUR/SHA/BEN: OUR = sender pays all charges, BEN = beneficiary pays (amount arrives reduced), SHA = each side pays its own — this determines whether the beneficiary receives the instructed amount and where fee entries post. On refund, decide per fee whether it returns (usually the fee does not, or partially — a product policy your engine must encode).</span></div><div class="pt"><b>Fee versioning is a correctness requirement</b><span>Fees change; old transactions keep the terms in force when they executed. So the engine stores fee schedules as versioned, effective-dated data, and each transaction records WHICH schedule version priced it — reprice-on-read is a bug that rewrites history (same principle as the 5A-W5 append-only rule).</span></div><div class="pt"><b>Limits as authorisation invariants</b><span>Per-transaction, daily/monthly cumulative, velocity (N per window), per-channel, per-risk-tier. A limit check is only meaningful inside the same transactional boundary as the reservation it guards: check-then-reserve as two independent steps is a TOCTOU race. Under READ COMMITTED, two concurrent 600-payments both read &#x27;spent 0 of 1000&#x27;, both pass, and together breach — the fix is serialising on the limit counter: SELECT...FOR UPDATE on a counter row, an atomic conditional UPDATE (spent + x &lt;= limit), or SERIALIZABLE with retry.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Write the fee-engine model: FeeSchedule (versioned, effective-dated), FeeRule (model type, params), FeeApplication (transaction id, schedule version, computed amount) — with the 5A-W4 allocation for percentage fees.</li><li>Table the OUR/SHA/BEN cases: who pays, what amount arrives, which ledger entries post where.</li><li>Re-read PostgreSQL isolation and write the exact interleaving where two concurrent transactions breach a daily limit under READ COMMITTED.</li><li>Choose your race-proofing mechanism (FOR UPDATE counter row vs atomic conditional update vs SERIALIZABLE) and justify it in one paragraph including the hot-account implications from 5A-W3.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>Fee computation is a pure function of (transaction, schedule-version); persistence of the version is what makes old transactions immutable in meaning.</li><li>A limit check outside the reservation&#x27;s transactional boundary is decorative — the race window is exactly the gap between check and reserve.</li><li>OUR/SHA/BEN is why &#x27;the amount that arrives&#x27; ≠ &#x27;the amount instructed&#x27; — recon (5A-W6) must expect it.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">Transactions store the fee-schedule version that priced them; never reprice history → apply: fee engine schema on day 3.</div><div class="rem">SHA = each side pays own fees (SEPA default); BEN = amount arrives reduced → apply: expected-amount logic in recon matching.</div><div class="rem">Two concurrent passes under READ COMMITTED can jointly breach a limit; serialise on the counter → apply: the day-3 race test.</div><div class="rem">Velocity limits need a windowed counter with the same race-proofing → apply: same mechanism, different key.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://eur-lex.europa.eu/eli/reg_del/2018/389/oj" target="_blank" rel="noopener">Commission Delegated Regulation (EU) 2018/389 — SCA RTS</a><span class="badge v">verified</span><span class="n">Day 2: the actual SCA rules under PSD2 — two-factor requirement, and the exemption articles (low-value, TRA, trusted beneficiaries, recurring). Read Articles 10–18 for exemptions.</span></div><div class="res"><a href="https://www.emvco.com/emv-technologies/3-d-secure/" target="_blank" rel="noopener">EMVCo — EMV 3-D Secure</a><span class="badge v">verified</span><span class="n">Day 2: what 3DS actually does — issuer authenticates the cardholder using transaction+device data, frictionless vs challenge flows; the card-world implementation of SCA.</span></div><div class="res"><a href="https://www.postgresql.org/docs/current/transaction-iso.html" target="_blank" rel="noopener">PostgreSQL — Transaction Isolation</a><span class="badge v">verified</span><span class="n">Day 1 and 3: the precise semantics behind the limit-check race — why two READ COMMITTED transactions can both pass a check that only one should; grounds your locking choice.</span></div><div class="res"><a href="https://www.moderntreasury.com/journal/how-to-scale-a-ledger-part-iv" target="_blank" rel="noopener">Modern Treasury — How to Scale a Ledger, Part IV</a><span class="badge v">verified</span><span class="n">Day 1: authorizing-mode writes with balance conditions and version locks — the same mechanism your limits engine needs to be race-proof.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>

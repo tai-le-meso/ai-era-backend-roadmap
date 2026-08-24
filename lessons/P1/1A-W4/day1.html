@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1A-W4 Day 1 — Learn I</title><style>
+*,*::before,*::after{box-sizing:border-box}
+:root{color-scheme:light;--s:#fcfcfb;--pl:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;
+--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--fill:#2a78d6;
+--p1:#2a78d6;--p2:#eb6834;--p3:#1baf7a;--p4:#eda100;--p5:#e87ba4;--p6:#008300;--p7:#4a3aa7;--p8:#e34948;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--s:#1a1a19;--pl:#0d0d0d;--ink:#fff;
+--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--fill:#3987e5;
+--p1:#3987e5;--p2:#d95926;--p3:#199e70;--p4:#c98500;--p5:#d55181;--p6:#008300;--p7:#9085e9;--p8:#e66767}}
+body{margin:0;background:var(--pl);color:var(--ink);font-size:14.5px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:26px 20px 70px}
+a{color:var(--fill);text-decoration:none}a:hover{text-decoration:underline}
+.crumbs{font-size:12px;color:var(--mut);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-block;font-size:11px;font-weight:650;padding:3px 8px;border-radius:6px;color:#fff}
+h1{font-size:21px;font-weight:650;margin:6px 0 2px;letter-spacing:-.01em}
+.meta{color:var(--ink2);font-size:12.5px;margin-bottom:18px}
+.card{background:var(--s);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+h2{font-size:12px;font-weight:650;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.day{border-left:3px solid var(--fill)}
+.dayHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dayT{font-size:15.5px;font-weight:650}
+.dayH{font-size:11.5px;color:var(--mut);white-space:nowrap}
+.obj{font-size:13px;color:var(--ink2);margin:4px 0 10px}
+.obj b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 4px}
+td{padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+td.t{white-space:nowrap;color:var(--mut);font-variant-numeric:tabular-nums;width:86px}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--pl);
+border:1px solid var(--ring);border-radius:4px;padding:0 4px}
+.art{font-size:12.5px;margin-top:8px;padding:7px 10px;border:1px dashed var(--ring);border-radius:7px;color:var(--ink2)}
+.art b{color:var(--ink)}
+.gate{border-left:3px solid var(--p6)}
+.gate li{font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;font-size:13px}
+.note{font-size:12px;color:var(--mut)}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+.sec{margin:0 0 14px}
+.secH{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:650;letter-spacing:.05em;
+text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.secH i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.pt{margin:0 0 10px}
+.pt b{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.pt span{font-size:13.5px;color:var(--ink2)}
+ol{margin:6px 0;padding-left:22px}ol li{margin:5px 0}
+.rem{font-size:13.5px;margin:5px 0;padding-left:14px;border-left:2px solid var(--p6)}
+.rem em{color:var(--ink2);font-style:normal}
+.res{font-size:13px;margin:7px 0}
+.res .n{color:var(--ink2);display:block;font-size:12.5px}
+.badge{font-size:10px;font-weight:650;padding:1px 6px;border-radius:4px;margin-left:6px;
+border:1px solid var(--ring);color:var(--mut)}
+.badge.v{color:#fff;background:#0ca30c;border-color:#0ca30c}
+.daynav{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px}
+.daynav a,.daynav span{font-size:12px;padding:5px 10px;border-radius:7px;border:1px solid var(--ring);
+background:var(--s);color:var(--ink2);text-decoration:none}
+.daynav .cur{background:var(--fill);border-color:var(--fill);color:#fff;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="crumbs"><a href="../index.html">Phase 1 lessons</a> · <a href="../1A-W4.html">1A-W4 week</a> · <a href="../../../roadmap-tracker.html">Tracker</a></div>
+<span class="chip" style="background:var(--p1)">1A-W4 · Day 1</span>
+<h1>Learn I — Generics, exceptions &amp; API design</h1>
+<div class="meta">Modern Java Mastery · Phase 1 — Engineering Foundation · ~4.5h</div>
+<div class="daynav"><span class="cur">Day 1 — Learn I</span><a href="day2.html">Day 2</a><a href="day3.html">Day 3</a><a href="day4.html">Day 4</a><a href="../1A-W4.html">↑ Week overview</a></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--p1)"></i>What I learn</div><div class="pt"><b>Generics beyond the basics</b><span>Bounded types (<code>&lt;T extends Comparable&lt;T&gt;&gt;</code>), generic methods with inference, and the limits of inference — the compiler infers from arguments and target type, and gives up on deeply nested generic returns. <code>@SafeVarargs</code> exists because generic varargs create an array of an erased type, which is heap pollution waiting to happen.</span></div><div class="pt"><b>Checked vs unchecked as a design decision</b><span>Checked exceptions force the caller to decide; unchecked let it propagate. The modern consensus is unchecked for programming errors and for anything the caller cannot meaningfully recover from — which is most things in a web service. The real question is not which type, but where the exception is <em>translated</em>.</span></div><div class="pt"><b>Exception translation across layers</b><span>A <code>SQLException</code> escaping to a controller is a layering failure. Each layer should translate into its own vocabulary: infrastructure → domain exception → HTTP problem. Losing the cause while translating is the common mistake — always pass the cause.</span></div><div class="pt"><b>The real cost of exceptions</b><span>Stack trace capture dominates the cost, not the throw. <code>fillInStackTrace</code> walks the stack; in a hot path an exception used for control flow can be orders of magnitude slower than a return value. Overriding <code>fillInStackTrace</code> for a truly hot signalling exception is a legitimate, documented technique.</span></div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--fill)"></i>What I do</div><ol><li>Read RFC 9457 §3 — the standard fields (<code>type</code>, <code>title</code>, <code>status</code>, <code>detail</code>, <code>instance</code>) and extension members.</li><li>Write down where in your work codebase a low-level exception currently escapes its layer.</li><li>In <code>jshell</code>, measure throw-with-stack-trace vs throw-with-overridden-<code>fillInStackTrace</code> in a tight loop — see the difference for yourself.</li><li>Sketch the exception hierarchy you will build tomorrow: one base, a small number of subtypes.</li></ol></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#eda100"></i>What I conclude</div><ul><li>The choice of checked vs unchecked matters far less than having exactly one place that decides the HTTP response.</li><li>An exception hierarchy with 30 types is as bad as one with none — aim for a base plus a handful that map to distinct responses.</li><li>Exceptions are for exceptional flow; using them for expected outcomes is a measurable performance decision, not just a style one.</li></ul></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:#0ca30c"></i>What I remember &amp; apply</div><div class="rem">RFC 9457 replaced RFC 7807 as the problem-details standard → apply: cite 9457 in API design docs.</div><div class="rem">Stack-trace capture is the expensive part of an exception → apply: never use exceptions for expected control flow in a hot path.</div><div class="rem">Always pass the cause when translating → apply: <code>throw new DomainException(msg, e)</code> — dropping <code>e</code> destroys the trail.</div><div class="rem"><code>@SafeVarargs</code> marks that you don&#x27;t write to the generic varargs array → apply: only add it when that is actually true.</div></div></div>
+<div class="card"><div class="sec"><div class="secH"><i style="background:var(--mut)"></i>Sources for this week</div><div class="res"><a href="https://docs.oracle.com/javase/specs/" target="_blank" rel="noopener">Java Language Specification</a><span class="badge">spec</span><span class="n">Ch.8.4 (method declarations) and Ch.11 (exceptions). Reference, not cover-to-cover. Day 1.</span></div><div class="res"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/package-summary.html" target="_blank" rel="noopener">Java SE 25 API — java.lang package</a><span class="badge">official</span><span class="n">Throwable hierarchy: Error vs Exception vs RuntimeException. Day 1.</span></div><div class="res"><a href="https://www.rfc-editor.org/rfc/rfc9457.html" target="_blank" rel="noopener">RFC 9457 — Problem Details for HTTP APIs</a><span class="badge">spec</span><span class="n">The error format your API must produce. Read §3 fields. Day 2.</span></div><div class="res"><a href="https://docs.spring.io/spring-boot/index.html" target="_blank" rel="noopener">Spring Boot reference</a><span class="badge v">verified</span><span class="n">Error handling / <code>ProblemDetail</code> support. Day 2–3.</span></div><div class="res"><a href="https://dev.java/learn/" target="_blank" rel="noopener">Dev.java — Learn Java</a><span class="badge v">verified</span><span class="n">Generics and Exceptions tracks. Day 1–2.</span></div>
+<p class="note">Badges: <span class="badge v">verified</span> = URL confirmed reachable when this pack was built. Others are stable official roots — if a deep link 404s, navigate from the site root.</p></div></div>
+</div></body></html>
